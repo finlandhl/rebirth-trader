@@ -17,7 +17,7 @@ No login required. No setup. Just open and watch.
 
 From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully responsive and works on any screen size.
 
-[![Rebirth Trader running on Android via Termux — click to play](assets/demo-phone.jpg)](assets/demo-phone.mp4)
+[![Rebirth Trader running on Android via Termux — click to play](https://raw.githubusercontent.com/finlandhl/rebirth-trader/main/assets/demo-phone.jpg)](https://github.com/finlandhl/rebirth-trader/blob/main/assets/demo-phone.mp4)
 
 *Running on Android via Termux — click to play*
 
