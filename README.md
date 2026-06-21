@@ -2,15 +2,43 @@
 
 **High-Frequency Scalping Bot for Binance Futures**
 
-A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Tested on iOS (iSH, Termius) and Android (Termux). Designed with a focus on capital preservation and consistent execution across hundreds of markets simultaneously.
+[![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Android%20%7C%20iOS-lightgrey)]()
+[![Status](https://img.shields.io/badge/status-production%20ready-success)]()
+
+> A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Tested on iOS (iSH, Termius) and Android (Termux).
 
 ---
 
-## Overview
+## Demo
 
-Rebirth Trader connects directly to Binance Futures via WebSocket streams, executing trades based on configurable entry signals and a multi-layered exit management system. Every position is monitored as an independent coroutine, allowing the system to manage dozens of concurrent trades across multiple symbols with zero API polling overhead.
+*A live instance is running and viewable at [72.61.160.72](http://72.61.160.72)*
 
-The system runs as a systemd service (on servers) or as a background process (on mobile via Termux/iSH), persists its state across restarts, and provides a real-time web dashboard for monitoring performance, positions, and equity.
+<p align="center">
+  <em>Dashboard screenshot will appear here — capture from live instance</em>
+</p>
+
+---
+
+## Quick Start
+
+```bash
+# Clone the repo
+git clone https://github.com/finlandhl/rebirth-trader.git
+cd rebirth-trader
+
+# Install dependencies
+uv sync
+
+# Run in simulation mode (no real trading)
+uv run streamer.py --scalp --all
+
+# Run live with dashboard
+uv run streamer.py --scalp --live --all --persist --ui
+```
+
+That's it. One command to deploy. The bot handles everything else — WebSocket connections, position management, state persistence, and dashboard hosting.
 
 ---
 
@@ -18,44 +46,29 @@ The system runs as a systemd service (on servers) or as a background process (on
 
 | Capability | Description |
 |-----------|-------------|
-| **Multi-Symbol Streaming** | Simultaneously monitors all USDT and USDC perpetual pairs via WebSocket |
+| **Multi-Symbol Streaming** | Simultaneously monitors all USDT + USDC perpetual pairs via WebSocket |
 | **Concurrent Position Management** | Per-position coroutines with configurable concurrency limits |
 | **Multi-Layered Exit Logic** | Five independent exit strategies operating in priority order |
-| **Trend-Aware Trail Suppression** | Reduces premature exits on strong trend-aligned moves |
+| **Trend-Aware Trail Suppression** | Reduces premature exits during strong trend-aligned moves |
 | **Loss Recovery Trail** | Adaptive trail that activates beyond a configurable loss threshold |
-| **Real-Time Dashboard** | Embedded web UI showing live P&L, equity curve, and position details |
+| **Real-Time Dashboard** | Embedded web UI showing live P&L, equity curve, and positions |
 | **State Persistence** | Full save and recovery of positions and config across restarts |
-| **Automated Operation** | Systemd integration for autonomous 24/7 runtime |
+| **Automated Operation** | Systemd integration (servers) or background process (mobile) |
 | **Symbol Blacklist** | Auto-suspension after consecutive losses |
 | **Hedge Management** | Dual-direction position support for correlated pairs |
-| **Trading Pause Window** | Configurable quiet hours with automatic resume |
-| **Capital Protection** | Per-position, total-usage, and balance caps |
+| **Cross-Platform** | Tested on Linux, Android (Termux), iOS (iSH/Termius) |
 
 ---
 
-## Architecture
+## Why This Stands Out
 
-```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│ Stream Engine│────▶│  Core Engine  │────▶│  Exit Logic  │
-│  (WebSocket) │     │  (Strategy)  │     │  (5 methods) │
-└──────────────┘     └──────────────┘     └──────────────┘
-       │                     │                     │
-       ▼                     ▼                     ▼
-┌──────────────────────────────────────────────────────┐
-│                 Binance Futures API                   │
-└──────────────────────────────────────────────────────┘
-```
+**Zero API polling** — The bot caches all price data from WebSocket streams. No REST API calls for monitoring. Sub-10ms price reads.
 
-For detailed system architecture, see [ARCHITECTURE.md](ARCHITECTURE.md).
+**Runs on anything** — VPS, laptop, or $150 Android phone. Full trading capability from a device that fits in your pocket.
 
----
+**Crash-proof** — State is saved every 60 seconds. Restart the bot and it resumes exactly where it left off, all positions restored.
 
-## Live Demo
-
-A live instance is running and viewable at: [72.61.160.72](http://72.61.160.72)
-
-*Note: This demo shows real trading activity in progress.*
+**Fault isolated** — Each trade runs in its own coroutine. One position failing never affects the others.
 
 ---
 
@@ -72,17 +85,26 @@ A live instance is running and viewable at: [72.61.160.72](http://72.61.160.72)
 
 ## BUY SOURCE
 
-Purchase includes:
+> **Purchase includes:**
+>
+> ✓ Complete Python source code — all modules, configs, and build tooling
+>
+> ✓ Full internal documentation — architecture reference with implementation details
+>
+> ✓ 30 days of updates — latest features and improvements
+>
+> ✓ Ready to deploy — VPS, laptop, or mobile (iOS & Android supported)
+>
+> **To inquire:** Open an issue on this repository or visit the [live demo website](http://72.61.160.72)
 
-- **Complete source code** — All Python modules, configuration files, and build tooling
-- **Full documentation** — Internal architecture reference with implementation details
-- **30 days of updates** — Latest features and improvements
-- **Ready to deploy** — Works on any Linux VPS, server, laptop, or mobile phone (iOS & Android supported)
+---
 
-**To inquire:** Open an issue on this repository or contact via the [live demo website](http://72.61.160.72).
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=finlandhl/rebirth-trader&type=Date)](https://star-history.com/#finlandhl/rebirth-trader&Date)
 
 ---
 
 ⚠ **Risk Warning:** Trading cryptocurrencies carries significant financial risk. Past performance does not guarantee future results. This software is provided for educational and research purposes. Use at your own risk.
 
-Rebirth Trader v3.0.0 — © 2026 — All rights reserved.
+**Rebirth Trader v3.0.0 — © 2026 — All rights reserved.**
