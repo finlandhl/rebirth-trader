@@ -18,7 +18,9 @@ No login required. No setup. Just open and watch.
 From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully responsive and works on any screen size.
 
 <p align="center">
-  <img src="assets/demo-phone.jpg" alt="Rebirth Trader running on mobile" width="360">
+  <video src="assets/demo-phone.mp4" controls width="360" poster="assets/demo-phone.jpg">
+    <img src="assets/demo-phone.jpg" alt="Rebirth Trader running on mobile" width="360">
+  </video>
   <br>
   <em>Running on Android via Termux</em>
 </p>
