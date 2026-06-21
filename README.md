@@ -4,8 +4,8 @@
 
 [![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Android%20%7C%20iOS-lightgrey)]()
-[![Status](https://img.shields.io/badge/status-production%20ready-success)]()
+![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Android%20%7C%20iOS-lightgrey)
+![Status](https://img.shields.io/badge/status-production%20ready-success)
 
 > A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Tested on iOS (iSH, Termius) and Android (Termux).
 
