@@ -2,47 +2,21 @@
 
 **High-Frequency Scalping Bot for Binance Futures**
 
-Terminal-based, 24/7 automated trading bot with advanced exit strategies, real-time dashboard, and multi-symbol support.
+Terminal-based, 24/7 automated trading bot for Binance Futures.
 
-## Features
+## At a Glance
 
-- **HFScalper Engine** — High-frequency scalping with per-position async coroutines
-- **5 Exit Logics** — Trailing Stop, Stop Loss, Take Profit, Loss Recovery Trail, Time Limit
-- **Real-time Dashboard** — Live P&L, equity curve, position monitoring via web UI
-- **Multi-Symbol Support** — Trade all USDT + USDC perpetual pairs simultaneously
-- **24/7 Operation** — Systemd service with automatic recovery
-- **Terminal-Based** — Zero GUI dependencies, runs on any Linux VPS
-
-## Architecture
-
-```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│ Stream Engine│────▶│  HFScalper   │────▶│  Exit Logic  │
-│  (WebSocket) │     │  (Strategy)  │     │  (5 methods) │
-└──────────────┘     └──────────────┘     └──────────────┘
-       │                     │                     │
-       ▼                     ▼                     ▼
-┌──────────────────────────────────────────────────────┐
-│                 Binance Futures API                   │
-└──────────────────────────────────────────────────────┘
-```
-
-## Live Demo
-
-Dashboard: [72.61.160.72](http://72.61.160.72)
-
-## Documentation
-
-- [Architecture](ARCHITECTURE.md)
-- [Features & Enhancements](FEATURES_ENHANCEMENT.md)
-- [HFScalper Workflow](HFSCALPER_WORKFLOW.md)
-- [Live Trading Guide](LIVE_TRADING.md)
+- **Scalping engine** — Automated trade execution with multiple exit strategies
+- **Real-time dashboard** — Live P&L, positions, and equity curve via web UI
+- **Multi-symbol** — Simultaneously monitors all USDT + USDC perpetual pairs
+- **Systemd integration** — Runs 24/7 with automatic recovery
+- **Terminal-based** — Zero GUI, runs on any Linux VPS
 
 ## BUY SOURCE
 
 Contact: **finland.lasme@gmail.com**
 
-Full codebase with 30 days of updates. Ready to deploy on your laptop, server, or mobile.
+Full codebase with 30 days of updates. Ready to deploy.
 
 ---
 
