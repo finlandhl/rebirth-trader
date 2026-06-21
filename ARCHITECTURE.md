@@ -2,7 +2,7 @@
 
 ## Overview
 
-Rebirth Trader is a terminal-based automated trading system for Binance Futures. It connects via WebSocket streams, executes trades based on configurable entry signals, and manages each position independently for fault isolation.
+Rebirth Trader is a terminal-based automated trading system for Binance Futures. It runs on any device with a Linux environment or terminal — servers, laptops, and mobile phones (tested on iOS and Android). It connects via WebSocket streams, executes trades based on configurable entry signals, and manages each position independently for fault isolation.
 
 ## Core Architecture
 

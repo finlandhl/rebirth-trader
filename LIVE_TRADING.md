@@ -4,7 +4,7 @@
 
 Deploying Rebirth Trader for live trading is a one-command process that:
 
-- Installs the bot as a system-managed service
+- Installs the bot as a system-managed service (on servers) or runs as a background process (on mobile via Termux/iSH)
 - Enables automatic startup on boot and restart on failure
 - Starts the embedded web dashboard for real-time monitoring
 - Optionally provisions a secure tunnel for remote access
@@ -59,7 +59,7 @@ Both formats are human-readable and designed to prevent data loss on unexpected 
 
 - A Binance Futures account
 - API key with futures trading permissions
-- Linux VPS with Python 3.10+
+- Any device with a Linux environment or CLI terminal — VPS, server, laptop, or mobile phone (tested on iOS via iSH/Termius and Android via Termux)
 - Internet connectivity
 
 ## Risk Management

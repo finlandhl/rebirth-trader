@@ -1,6 +1,6 @@
 # Core Engine Workflow
 
-The HFScalper engine is the heart of Rebirth Trader. It orchestrates market data processing, signal generation, trade execution, and position management.
+The HFScalper engine is the heart of Rebirth Trader. It orchestrates market data processing, signal generation, trade execution, and position management. Runs on any device — VPS, laptop, or mobile phone (iOS & Android tested).
 
 ## Workflow Summary
 

@@ -1,5 +1,9 @@
 # Features & Enhancements — v3.0.0
 
+## Cross-Platform Support
+
+Runs on any device with a Linux environment or CLI terminal — VPS servers, laptops, and mobile phones. Tested on iOS (iSH, Termius) and Android (Termux). Full trading capability from a phone.
+
 ## State Persistence
 
 The system continuously saves its state to disk, allowing full recovery after restarts or crashes. All active positions, configuration, and tracking data are preserved and seamlessly restored when the bot resumes — no trades lost, no manual intervention needed.

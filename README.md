@@ -2,7 +2,7 @@
 
 **High-Frequency Scalping Bot for Binance Futures**
 
-A terminal-based, fully automated trading system engineered for 24/7 operation on any Linux VPS. Designed with a focus on capital preservation and consistent execution across hundreds of markets simultaneously.
+A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Tested on iOS (iSH, Termius) and Android (Termux). Designed with a focus on capital preservation and consistent execution across hundreds of markets simultaneously.
 
 ---
 
@@ -10,7 +10,7 @@ A terminal-based, fully automated trading system engineered for 24/7 operation o
 
 Rebirth Trader connects directly to Binance Futures via WebSocket streams, executing trades based on configurable entry signals and a multi-layered exit management system. Every position is monitored as an independent coroutine, allowing the system to manage dozens of concurrent trades across multiple symbols with zero API polling overhead.
 
-The system runs as a systemd service, persists its state across restarts, and provides a real-time web dashboard for monitoring performance, positions, and equity.
+The system runs as a systemd service (on servers) or as a background process (on mobile via Termux/iSH), persists its state across restarts, and provides a real-time web dashboard for monitoring performance, positions, and equity.
 
 ---
 
@@ -77,7 +77,7 @@ Purchase includes:
 - **Complete source code** — All Python modules, configuration files, and build tooling
 - **Full documentation** — Internal architecture reference with implementation details
 - **30 days of updates** — Latest features and improvements
-- **Ready to deploy** — Works on any Linux VPS with Binance Futures access
+- **Ready to deploy** — Works on any Linux VPS, server, laptop, or mobile phone (iOS & Android supported)
 
 **To inquire:** Open an issue on this repository or contact via the [live demo website](http://72.61.160.72).
 
