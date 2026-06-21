@@ -9,36 +9,13 @@
 
 > A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Tested on iOS (iSH, Termius) and Android (Termux).
 
----
+## See It Live
 
-## Demo
+A fully operational instance is running at [**72.61.160.72**](http://72.61.160.72). Open it in any browser — watch the bot trading in real time with live P&L, position tracking, and equity curve.
 
-*A live instance is running and viewable at [72.61.160.72](http://72.61.160.72)*
+No login required. No setup. Just open and watch.
 
-<p align="center">
-  <em>Dashboard screenshot will appear here — capture from live instance</em>
-</p>
-
----
-
-## Quick Start
-
-```bash
-# Clone the repo
-git clone https://github.com/finlandhl/rebirth-trader.git
-cd rebirth-trader
-
-# Install dependencies
-uv sync
-
-# Run in simulation mode (no real trading)
-uv run streamer.py --scalp --all
-
-# Run live with dashboard
-uv run streamer.py --scalp --live --all --persist --ui
-```
-
-That's it. One command to deploy. The bot handles everything else — WebSocket connections, position management, state persistence, and dashboard hosting.
+From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully responsive and works on any screen size.
 
 ---
 
@@ -96,12 +73,6 @@ That's it. One command to deploy. The bot handles everything else — WebSocket 
 > ✓ Ready to deploy — VPS, laptop, or mobile (iOS & Android supported)
 >
 > **To inquire:** Open an issue on this repository or visit the [live demo website](http://72.61.160.72)
-
----
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=finlandhl/rebirth-trader&type=Date)](https://star-history.com/#finlandhl/rebirth-trader&Date)
 
 ---
 
