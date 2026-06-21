@@ -1,29 +1,33 @@
-# HFScalper Workflow
+# Core Engine Workflow
 
-**Status:** Superseded — this document has been replaced by the system architecture reference.
+The HFScalper engine is the heart of Rebirth Trader. It orchestrates market data processing, signal generation, trade execution, and position management.
 
-## Reference
+## Workflow Summary
 
-For a complete, up-to-date overview of the system architecture, please see the [Architecture Guide](./ARCHITECTURE.md).
+**1. Market Data Ingestion**
+WebSocket streams deliver real-time price data for all configured symbols. Data is parsed, validated, and cached in memory with zero API polling overhead.
 
-The Architecture Guide covers:
+**2. Market Assessment**
+For each symbol, the engine periodically evaluates:
+- **Trend direction** — based on configurable indicators
+- **Volatility** — current market conditions
+- **Signal confidence** — combined assessment strength
 
-- **System overview & data flow** — End-to-end pipeline from data ingestion to trade execution
-- **Entry flow & initialization** — Parameter configuration and startup sequence
-- **Stream data processing & price buffer** — Real-time market data handling
-- **Signal generation & market assessment** — Entry signal evaluation logic
-- **Position lifecycle management** — Full trade lifecycle from placeholder through monitoring to close
-- **Position sizing & capital management** — Risk-based allocation strategies
-- **Exit logic system** — Multi-layer stop management with trailing mechanisms
-- **Hedge management** — Defensive hedging with market condition gating
-- **Trading schedules** — Configurable trading windows and pause periods
-- **Symbol management** — Blacklist and auto-suspension after consecutive losses
-- **State persistence** — Save/restore cycle for crash recovery
-- **Shutdown & signal handling** — Graceful shutdown and auto-mode integration
-- **Auto-mode & service management** — Headless operation and process supervision
-- **Error handling & recovery** — Resilience patterns and failure recovery
+**3. Entry Decision**
+When confidence thresholds are met and capital protection gates pass, a market order is placed on Binance Futures. If the order fails due to exchange constraints, the engine automatically rescales and retries.
 
----
+**4. Position Monitoring**
+Each position runs as an independent monitoring coroutine. The engine tracks price, PnL, position age, and trend alignment in real-time.
 
-**Last updated:** June 14, 2026
-**Superseded by:** `docs/ARCHITECTURE.md`
+**5. Exit Execution**
+Multiple exit logics are evaluated in priority order on each monitoring cycle. When any logic triggers, the position is closed via Binance API and the result is recorded.
+
+**6. State Persistence**
+Active positions are periodically saved to disk. On restart, the engine restores all positions and resumes monitoring automatically.
+
+## Key Characteristics
+
+- **Fully asynchronous** — all operations run concurrently without blocking
+- **Fault-isolated** — each position is independently error-handled
+- **Configurable** — all thresholds, limits, and behaviors adjustable via configuration
+- **Headless-capable** — designed for 24/7 automated operation
