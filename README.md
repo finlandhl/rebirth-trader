@@ -19,7 +19,7 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 [![Rebirth Trader running on Android via Termux — click to play](https://raw.githubusercontent.com/finlandhl/rebirth-trader/main/assets/demo-phone.jpg)](https://github.com/finlandhl/rebirth-trader/blob/main/assets/demo-phone.mp4)
 
-*web dashboard accessible to specified address*
+*embedded dashboard of bot running accessible through your browser*
 
 ---
 
