@@ -1,4 +1,4 @@
-# Features & Enhancements — v3.0.0
+# Features & Enhancements — v3.0.3
 
 ## Cross-Platform Support
 

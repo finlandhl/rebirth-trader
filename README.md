@@ -1,4 +1,4 @@
-# Rebirth Trader v3.0.0
+# Rebirth Trader v3.0.3
 
 **High-Frequency Scalping Bot for Binance Futures**
 
@@ -115,4 +115,4 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 ⚠ **Risk Warning:** Trading cryptocurrencies carries significant financial risk. Past performance does not guarantee future results. This software is provided for educational and research purposes. Use at your own risk.
 
-**Rebirth Trader v3.0.0 — © 2026 — All rights reserved.**
+**Rebirth Trader v3.0.3 — © 2026 — All rights reserved.**
