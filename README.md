@@ -6,6 +6,12 @@
 [![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/)
 ![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Android%20%7C%20iOS-lightgrey)
 ![Status](https://img.shields.io/badge/status-production%20ready-success)
+![asyncio](https://img.shields.io/badge/asyncio-concurrent-7B4F9E)
+![WebSocket](https://img.shields.io/badge/WebSocket-streaming-4B89DC)
+![uv](https://img.shields.io/badge/uv-package%20manager-FFD43B)
+![JSONL](https://img.shields.io/badge/JSONL-persistence-2EA44F)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-tunnel-F38020)
+![Selenium](https://img.shields.io/badge/Selenium-screenshots-43B02A)
 
 > A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Tested on iOS (iSH, Termius) and Android (Termux).
 
@@ -52,6 +58,24 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 **Crash-proof** — State is saved every 60 seconds. Restart the bot and it resumes exactly where it left off, all positions restored.
 
 **Fault isolated** — Each trade runs in its own coroutine. One position failing never affects the others.
+
+---
+
+## Built With
+
+| Tool | Purpose |
+|------|---------|
+| **Python 3.13** | Core runtime |
+| **asyncio** | Async concurrency — 20+ parallel positions |
+| **Binance WebSocket Streams** | Zero-API real-time price feed |
+| **uv** | Python package & project management |
+| **JSONL** | Crash-safe append-only state persistence |
+| **Cloudflare Tunnel** | Secure remote dashboard access from anywhere |
+| **Selenium + Chromium** | Automated screenshot generation for assets |
+| **Claude Code (Anthropic)** | AI pair programming for complex features |
+| **Hermes Agent (Nous Research)** | AI agent orchestration & automation |
+| **Kimi K2.6 (Moonshot AI)** | Reasoning & code generation |
+| **DeepSeek** | AI code synthesis & problem solving |
 
 ---
 

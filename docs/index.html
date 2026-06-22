@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — Rebirth Trader</title>
+  <meta name="description" content="Learn how Rebirth Trader works: setup, CLI flags, deployment, workflow, and live performance.">
+  <link rel="icon" type="image/x-icon" href="https://72.61.160.72/favicon.ico">
+  <link rel="icon" type="image/webp" href="https://72.61.160.72/rebirth-logo-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0e1a; --bg-alt: #0f1423;
+      --surface: rgba(255,255,255,0.035); --surface-hover: rgba(255,255,255,0.055);
+      --border: rgba(255,255,255,0.07); --text: #f5f5f7; --text-secondary: #8e8e96;
+      --accent: #E8483A; --accent-hover: #f05a4a; --accent-subtle: rgba(232,72,58,0.15);
+      --amber: #F68936; --amber-subtle: rgba(246,137,54,0.15);
+      --blue: #3B82F6; --blue-subtle: rgba(59,130,246,0.12);
+      --violet: #8B5CF6; --violet-subtle: rgba(139,92,246,0.12);
+      --emerald: #10B981; --emerald-subtle: rgba(16,185,129,0.12);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    nav {
+      background: rgba(10,14,26,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 17px; font-weight: 700; letter-spacing: -0.02em; }
+    .nav-logo span { color: #fff; }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.3s var(--ease); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .nav-cta:hover { background: var(--accent-hover) !important; color: #fff !important; }
+    .nav-links a.active-nav { color: var(--accent); }
+
+    /* Hero */
+    .page-hero {
+      padding: 80px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .page-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; }
+    .page-hero h1 .accent { color: var(--accent); }
+    .page-hero p { font-size: clamp(14px, 1.6vw, 17px); color: var(--text-secondary); opacity: 0.7; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+    /* Sections */
+    .section { max-width: 1100px; margin: 0 auto; padding: 24px 24px; }
+    .section-title {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-title span { font-size: 12px; font-weight: 700; color: var(--accent); opacity: 0.5; letter-spacing: 0.06em; }
+    .section-title h2 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .card:hover { transform: translateY(-1px); box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+
+    /* Feature Grid */
+    .feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .feat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      transition: transform 0.3s var(--ease);
+    }
+    .feat-card:hover { transform: translateY(-1px); }
+    .feat-card h3 { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 6px; letter-spacing: 0.02em; }
+    .feat-card p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; }
+    .feat-card .amber { color: var(--amber); }
+
+    /* Workflow diagram */
+    .wf-steps {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      margin: 28px 0;
+      flex-wrap: wrap;
+    }
+    .wf-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px 18px;
+      min-width: 120px;
+      flex: 1;
+      position: relative;
+    }
+    .wf-step::after {
+      content: '→';
+      position: absolute;
+      right: -6px;
+      top: 20px;
+      font-size: 22px;
+      color: var(--text-secondary);
+      opacity: 0.3;
+      font-weight: 300;
+    }
+    .wf-step:last-child::after { display: none; }
+    .wf-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .wf-icon.i1 { background: var(--accent-subtle); color: var(--accent); }
+    .wf-icon.i2 { background: var(--amber-subtle); color: var(--amber); }
+    .wf-icon.i3 { background: var(--blue-subtle); color: var(--blue); }
+    .wf-icon.i4 { background: var(--violet-subtle); color: var(--violet); }
+    .wf-icon.i5 { background: var(--emerald-subtle); color: var(--emerald); }
+    .wf-label { font-size: 12.5px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .wf-desc { font-size: 10.5px; color: var(--text-secondary); line-height: 1.4; max-width: 120px; }
+
+    /* Code blocks */
+    .code-block {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 12.5px;
+      background: #060a14;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      overflow-x: auto;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .code-block .cmt { color: rgba(255,255,255,0.3); }
+    .code-block .hl { color: var(--accent); }
+    .code-block .hl2 { color: var(--amber); }
+    .code-block .hl3 { color: var(--emerald); }
+    .code-block .dim { color: rgba(255,255,255,0.4); }
+
+    /* Tables */
+    .specs-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 12px; }
+    .specs-table th { text-align: left; padding: 8px 10px; color: var(--text-secondary); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border); }
+    .specs-table td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.03); color: var(--text-secondary); }
+    .specs-table td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; }
+
+    /* Stats bar */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-box .val { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+    .stat-box .val .accent { color: var(--accent); }
+    .stat-box .val .amber { color: var(--amber); }
+    .stat-box .val .emerald { color: var(--emerald); }
+    .stat-box .lbl { font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+    /* Deployment grid */
+    .deploy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .deploy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      position: relative;
+    }
+    .deploy-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .deploy-card h3 .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 9px;
+      border-radius: 20px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .badge-rec { background: var(--emerald-subtle); color: var(--emerald); border: 1px solid rgba(16,185,129,0.25); }
+    .badge-alt { background: var(--amber-subtle); color: var(--amber); border: 1px solid rgba(246,137,54,0.25); }
+
+    .deploy-card p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+    .deploy-card .code-inline {
+      display: block;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 11.5px;
+      background: #060a14;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin: 6px 0;
+      color: var(--emerald);
+      line-height: 1.5;
+      word-break: break-all;
+    }
+
+    /* Note box */
+    .note {
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 12px 0;
+    }
+    .note strong { color: var(--blue); }
+    .warn {
+      background: rgba(232,72,58,0.08);
+      border: 1px solid rgba(232,72,58,0.2);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 12px 0;
+    }
+    .warn strong { color: var(--accent); }
+
+    /* Pair badges */
+    .pair-badges { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }
+    .pair-badge {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 10.5px;
+      background: var(--accent-subtle);
+      border: 1px solid rgba(232,72,58,0.2);
+      padding: 2px 10px;
+      border-radius: 20px;
+      color: var(--accent);
+    }
+    .pair-badge.alt { background: var(--amber-subtle); border-color: rgba(246,137,54,0.2); color: var(--amber); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.05s; }
+    .reveal-d2 { transition-delay: 0.1s; }
+    .reveal-d3 { transition-delay: 0.15s; }
+
+    /* Enhancement list inside cards */
+    .enh-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .enh-item {
+      color: var(--text); font-size: 13.5px; font-weight: 500;
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
+    }
+    .enh-item:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.12); }
+    .enh-icon { flex-shrink: 0; width: 20px; text-align: center; font-size: 15px; }
+    .enh-full { grid-column: 1 / -1; }
+
+    /* Footer */
+    footer { padding: 24px; text-align: center; border-top: 1px solid var(--border); }
+    footer p { font-size: 11px; color: rgba(255,255,255,0.45); }
+    .footer-risk {
+      margin-top: 12px;
+      padding: 9px 10px;
+      background: rgba(232,72,58,0.10);
+      border: 1px solid rgba(232,72,58,0.3);
+      border-radius: 4px;
+      font-size: 7px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.6);
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 0.01em;
+    }
+    .footer-risk strong { color: #E8483A; font-weight: 800; font-size: 8px; }
+
+    /* Lang toggle */
+    
+    
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .wf-steps { flex-direction: column; align-items: center; gap: 6px; }
+      .wf-step { flex-direction: row; gap: 12px; min-width: auto; width: 100%; padding: 10px 16px; text-align: left; }
+      .wf-step::after { display: none; }
+      .wf-step .wf-desc { display: none; }
+      .wf-icon { margin-bottom: 0; flex-shrink: 0; }
+      .wf-desc { max-width: none; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .deploy-grid { grid-template-columns: 1fr; }
+      .feat-grid { grid-template-columns: 1fr; }
+      /* Tables: prevent horizontal overflow */
+      .card { overflow-x: auto; }
+      .specs-table { font-size: 11px; }
+      .specs-table th { font-size: 10px; padding: 6px 8px; }
+      .specs-table td { padding: 6px 8px; }
+      .specs-table td:first-child { white-space: normal; word-break: break-all; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 10.5px; }
+    }
+    @media (max-width: 520px) {
+      .page-hero h1 { font-size: 28px; }
+      .page-hero { padding: 60px 20px 32px; }
+      .stat-box .val { font-size: 18px; }
+      .section { padding: 14px 16px; }
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 36px; height: 36px;
+      border: none; background: transparent;
+      cursor: pointer; gap: 5px;
+      padding: 0; z-index: 110; position: relative;
+    }
+    .hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all 0.4s var(--ease); transform-origin: center;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile overlay */
+    .mobile-overlay {
+      position: fixed; inset: 0; z-index: 105;
+      background: rgba(10,14,26,0.5);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 28px;
+    }
+    .mobile-overlay.open { opacity: 1; visibility: visible; }
+    .mobile-overlay a, .mobile-overlay button {
+      font-size: 20px; font-weight: 500;
+      color: var(--text-secondary); text-decoration: none;
+      background: none; border: none;
+      font-family: inherit; cursor: pointer;
+      letter-spacing: -0.01em; transition: color 0.3s var(--ease);
+    }
+    .mobile-overlay a:hover, .mobile-overlay button:hover { color: var(--text); }
+    .mobile-overlay .nav-cta {
+      background: var(--accent); color: #fff !important;
+      padding: 10px 32px; border-radius: 24px;
+      font-size: 16px; font-weight: 600; margin-top: 8px;
+    }
+    .mobile-overlay .nav-cta:hover { background: var(--accent-hover) !important; color: #fff !important; }
+
+    /* Page hero background */
+    .page-hero-bg {
+      position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+    }
+    .page-hero-bg::after {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      top: 40%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(232,72,58,0.10) 0%, rgba(246,137,54,0.05) 30%, transparent 65%);
+      border-radius: 50%;
+      animation: orb 20s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+      pointer-events: none;
+      filter: blur(50px);
+      mix-blend-mode: screen;
+    }
+    @keyframes orb {
+      0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 0.6; }
+      100% { transform: translate(-45%, -55%) scale(1.2) rotate(15deg); opacity: 1; }
+    }
+
+    /* Buy source button */
+    .buy-section { text-align: center; padding: 32px; }
+    .buy-section h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .buy-section p { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.5; }
+    .btn-buy {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      background: rgba(232,72,58,0.08);
+      border: 1px solid rgba(232,72,58,0.2);
+      border-radius: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .btn-buy:hover { background: rgba(232,72,58,0.15); border-color: var(--accent); transform: translateY(-1px); }
+    .buy-footnote { font-size: 11px; color: var(--text-secondary); margin-top: 10px; opacity: 0.5; }
+
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://72.61.160.72/" class="nav-logo"><span>Rebirth</span><img src="https://72.61.160.72/img/phoenix_nav.png" alt="" style="height:19px;width:auto;opacity:0.9"></a>
+    <ul class="nav-links">
+      <li><a href="https://72.61.160.72/#features">Features</a></li>
+      <li><a href="https://72.61.160.72/#specs">Specs</a></li>
+      <li><a href="https://72.61.160.72/how-it-works.html" class="active-nav">How It Works</a></li>
+      <li><a href="https://github.com/finlandhl/rebirth-trader" target="_blank" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:middle"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+      <li><a href="http://72.61.160.72" class="nav-cta">Dashboard</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile overlay -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <a href="https://72.61.160.72/#features" onclick="toggleMenu()">Features</a>
+  <a href="https://72.61.160.72/#specs" onclick="toggleMenu()">Specs</a>
+  <a href="https://72.61.160.72/how-it-works.html" onclick="toggleMenu()">How It Works</a>
+  <a href="https://github.com/finlandhl/rebirth-trader" target="_blank" onclick="toggleMenu()"><svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:middle"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  <a href="http://72.61.160.72" class="nav-cta" onclick="toggleMenu()">Dashboard</a>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero reveal visible">
+ <div class="page-hero-bg"></div>
+ <div class="page-hero-inner">
+ <h1><span class="accent">How It</span> Works</h1>
+ <p>From zero to live trading in minutes. A Binance Futures scalping bot built for speed, persistence, and survival — designed to run 24/7 on a VPS, laptop, or mobile.</p>
+ </div>
+</section>
+
+<!-- 1. What Is It -->
+<section class="section reveal visible">
+  <div class="section-title"><span>01</span><h2>What Is Rebirth Trader?</h2></div>
+  <div class="card">
+    <p style="font-size:13.5px;color:var(--text-secondary);line-height:1.7">Rebirth Trader is a <strong style="color:var(--text)">terminal-based high-frequency scalping bot</strong> for Binance Futures. It streams live prices via WebSocket across 500+ USDT + 38 USDC trading pairs, evaluates market conditions every 5 messages (EMA trend + RSI + volatility), and manages up to 20 concurrent positions — each running as its own isolated async coroutine. Every position has a 6-layer exit priority system, hedge mode support, and state persistence that survives crashes. Designed around one principle: <strong style="color:var(--accent)">scalp. survive. repeat.</strong></p>
+  </div>
+</section>
+
+<!-- 2. Core Features (concise) -->
+<section class="section reveal visible reveal-d1">
+  <div class="section-title"><span>02</span><h2>Core Features</h2></div>
+  <div class="feat-grid">
+    <div class="feat-card"><h3>6-Layer Exit System</h3><p>Stop Loss (4%), Loss Recovery Trail (3.5%+1.1%), Take Profit (6%), Trailing Stop (2.5%+0.092%), Time Limit (7d), Reversal Detection — checked in strict priority every second.</p></div>
+    <div class="feat-card"><h3>Zero-API Price Buffer</h3><p>All 500+ USDT and 38 USDC pairs stream via WebSocket into in-memory deques (maxlen=120). Positions read from buffer — zero Binance API calls for monitoring. Sub-10ms latency.</p></div>
+    <div class="feat-card"><h3 class="amber">Candle-Enhanced Trail</h3><p>1m candle EMA(12/26) trend gate suppresses trailing stop when the trend matches the position direction — letting winners run and losers recover longer.</p></div>
+    <div class="feat-card"><h3>Hedge Mode</h3><p>Dual-side positions per symbol via Binance Hedge Mode. Defensive hedge with 24h timer + candle confirmation gate prevents premature hedging.</p></div>
+    <div class="feat-card"><h3 class="amber">State Persistence</h3><p>Crash-safe JSONL snapshots every 60s to <code style="font-size:11px">logs/state.jsonl</code>. Full position restoration on restart with hedge pair linking and monitor coroutine recreation.</p></div>
+    <div class="feat-card"><h3>Systemd Integration</h3><p>Auto-installs systemd service on first <code style="font-size:11px">--persist</code> run. <code style="font-size:11px">Restart=always</code> — survives SSH disconnect, reboot, and crashes.</p></div>
+    <div class="feat-card"><h3 class="amber">Smart Scalping</h3><p>EMA 50/100 trend detection + RSI 14 filter + volatility check. Dynamic leverage: 10x–30x based on confidence score (0.2–1.0). Entries blocked when volatility exceeds 2.5x threshold.</p></div>
+    <div class="feat-card"><h3>Symbol Blacklist</h3><p>Auto-suspends symbols after 3 consecutive losses for 24h (configurable). Pre-blacklist support for known-problematic pairs. Persisted across restarts.</p></div>
+    <div class="feat-card"><h3 class="amber">Trading Pause</h3><p>Daily 23:00–02:00 UTC window blocks new entries and hedges during low-liquidity hours. Existing positions continue normal monitoring.</p></div>
+  </div>
+</section>
+
+<!-- 3. Simple Workflow Layout -->
+<section class="section reveal visible reveal-d2">
+  <div class="section-title"><span>03</span><h2>Workflow — Setup to Dashboard</h2></div>
+  <div class="card">
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:6px;line-height:1.5">The entire lifecycle from install to live monitoring. Each step is one command or click.</p>
+    <div class="wf-steps">
+      <div class="wf-step">
+        <div class="wf-icon i1">1</div>
+        <div><div class="wf-label">Install &amp; Configure</div><div class="wf-desc"><code>uv sync</code> + create <code>.env</code> with API keys</div></div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon i2">2</div>
+        <div><div class="wf-label">Choose Pairs</div><div class="wf-desc"><code>--symbols</code> for specific pairs or <code>--all</code> for every tradable futures symbol</div></div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon i3">3</div>
+        <div><div class="wf-label">Run &amp; Persist</div><div class="wf-desc"><code>streamer.py --scalp --live --persist</code> — auto-installs systemd service</div></div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon i4">4</div>
+        <div><div class="wf-label">Monitor</div><div class="wf-desc"><code>systemctl status</code> or <code>journalctl -f</code> for live logs</div></div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon i5">5</div>
+        <div><div class="wf-label">Dashboard</div><div class="wf-desc">Real-time positions, equity curve, trade history — accessible from any browser</div></div>
+      </div>
+    </div>
+    <div class="code-block">
+<span class="dim"># Full production command — 500+ USDT / 38 USDC pairs, live trading, systemd</span>
+uv run streamer.py --scalp --all --loghfs --live --persist --auto
+    </div>
+  </div>
+</section>
+
+<!-- 4. Quick Start -->
+<section class="section reveal visible reveal-d3">
+  <div class="section-title"><span>04</span><h2>Quick Start</h2></div>
+  <div class="card">
+    <h4 style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);opacity:0.8;margin-bottom:12px">1. Install Dependencies</h4>
+    <div class="code-block">
+<span class="cmt"># Requires Python 3.13+ and uv (https://docs.astral.sh/uv/)</span>
+cd rebirth-trader
+uv sync
+    </div>
+
+    <h4 style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);opacity:0.8;margin-bottom:12px;margin-top:24px">2. Set Up API Keys</h4>
+    <div class="code-block">
+cat &gt; .env <span class="hl">&lt;&lt; 'EOF'</span>
+BINANCE_API_KEY=your_api_key_here
+BINANCE_API_SECRET=your_api_secret_here
+<span class="hl">EOF</span>
+chmod 600 .env
+    </div>
+
+    <h4 style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);opacity:0.8;margin-bottom:12px;margin-top:24px">3. Console Mode (No Real Trading)</h4>
+    <div class="code-block">
+uv run streamer.py --scalp --loghfs --symbols BTCUSDC
+    </div>
+
+    <h4 style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);opacity:0.8;margin-bottom:12px;margin-top:24px">4. Live Trading (Production)</h4>
+    <div class="code-block">
+<span class="cmt"># First run — installs systemd service + starts trading</span>
+uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --persist --auto
+    </div>
+
+    <div class="note"><strong>ℹ Auto-mode</strong> — <code>--auto</code> bypasses all interactive confirmations. Required for systemd / headless operation. The <code>REBIRTH_TRADER_SYSTEMD=1</code> environment variable also triggers auto-mode automatically.</div>
+  </div>
+</section>
+
+<!-- 5. CLI Flags -->
+<section class="section reveal visible">
+  <div class="section-title"><span>05</span><h2>CLI Flags Reference</h2></div>
+  <div class="card">
+    <table class="specs-table">
+      <tr><th>Flag</th><th>Type</th><th>Description</th></tr>
+      <tr><td>--scalp</td><td>bool</td><td>Enable HFScalper trading mode</td></tr>
+      <tr><td>--live</td><td>bool</td><td>Real money trading on Binance Futures</td></tr>
+      <tr><td>--persist</td><td>bool</td><td>Save/restore state + install systemd service</td></tr>
+      <tr><td>--auto / -a</td><td>bool</td><td>Bypass all confirmations (headless/systemd operation)</td></tr>
+      <tr><td>--loghfs</td><td>bool</td><td>Enable JSONL event logging to logs/</td></tr>
+      <tr><td>--symbols</td><td>str</td><td>Comma-separated trading pairs (mutually exclusive with --all)</td></tr>
+      <tr><td>--all</td><td>bool</td><td>Trade all tradable futures symbols (mutually exclusive with --symbols)</td></tr>
+      <tr><td>--blacked</td><td>str[*]</td><td>Symbol blacklist: auto-suspend after 3 losses for N hours (default 24H)</td></tr>
+      <tr><td>--raw</td><td>bool</td><td>Save raw WebSocket JSON data</td></tr>
+      <tr><td>--save</td><td>str</td><td>Save stream to a file</td></tr>
+      <tr><td>--version</td><td>-</td><td>Show version number and exit</td></tr>
+      <tr><td>-h, --help</td><td>-</td><td>Show help message and exit</td></tr>
+    </table>
+    <div class="note" style="margin-top:16px"><strong>Pair selection</strong> — <code>--symbols</code> and <code>--all</code> are mutually exclusive. Exactly one is required. Use <code>--symbols</code> for a curated list (recommended for small capital), <code>--all</code> to let the bot find opportunities across every market.</div>
+  </div>
+</section>
+
+<!-- 6. Deployment Options -->
+<section class="section reveal visible reveal-d1">
+  <div class="section-title"><span>06</span><h2>Deployment Options</h2></div>
+  <div class="deploy-grid">
+    <div class="deploy-card">
+      <h3>🖥️ Laptop / Desktop <span class="badge badge-rec">Recommended</span></h3>
+      <p>Run from your local machine with <code>uv run streamer.py</code>. Add <code>--persist</code> for crash recovery. The terminal connection must stay alive — use <code>screen</code> or <code>tmux</code> for persistence.</p>
+      <div class="code-inline">uv run streamer.py --scalp --symbols BTCUSDC --live --loghfs</div>
+      <p style="margin-top:8px">Best for: testing, development, manual monitoring. No VPS needed.</p>
+    </div>
+    <div class="deploy-card">
+      <h3>☁️ VPS (Production) <span class="badge badge-rec">Best</span></h3>
+      <p>One command auto-installs systemd: service survives reboot, SSH disconnect, and crashes. True 24/7 operation with zero manual intervention.</p>
+      <div class="code-inline">uv run streamer.py --scalp --symbols BTCUSDC,... --live --loghfs --persist --auto</div>
+      <div class="code-inline" style="margin-top:6px;color:var(--amber)"># Health check<br>systemctl status rebirth-trader</div>
+      <p style="margin-top:8px">Min requirements: 1 vCPU, 1GB RAM, 10GB storage, Ubuntu 22.04+</p>
+    </div>
+    <div class="deploy-card">
+      <h3>📱 Android (Termux) <span class="badge badge-alt">Experimental</span></h3>
+      <p>Python 3.13 runs fine on Termux. Install <code>uv</code> via pip, sync, and run in console mode. Persistent background via <code>termux-services</code> or <code>tmux</code>.</p>
+      <div class="code-inline">pkg install python rust git<br>pip install uv<br>uv sync<br>uv run streamer.py --scalp --symbols BTCUSDC --loghfs</div>
+      <p style="margin-top:8px">Best for: monitoring and testing on the go. Not recommended for full production due to Android's aggressive process management.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Trading Pairs -->
+<section class="section reveal visible reveal-d2">
+  <div class="section-title"><span>07</span><h2>Trading Pairs — All vs Selected</h2></div>
+  <div class="card">
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.6">Rebirth Trader supports both modes. Choose based on your capital and strategy.</p>
+    <table class="specs-table">
+      <tr><th>Mode</th><th>Flag</th><th>When to Use</th><th>Positions</th></tr>
+      <tr><td>All Futures</td><td>--all</td><td>Large capital ($500+), full market coverage</td><td>Scans every tradable USDT/USDC pair</td></tr>
+      <tr><td>Selected Pairs</td><td>--symbols</td><td>Small capital ($10–$500), focused strategy</td><td>Manual curation of 5–500+ pairs</td></tr>
+    </table>
+    <p style="font-size:12.5px;color:var(--text-secondary);margin-top:14px;line-height:1.6">Example selected-pair command (500+ USDT / 38 USDC pairs — the full traded set):</p>
+    <div class="code-block" style="font-size:11px;line-height:1.7">
+--symbols 1000BONKUSDC,1000PEPEUSDC,1000SHIBUSDC,AAVEUSDC,ADAUSDC,ARBUSDC,AVAXUSDC,BCHUSDC,BIOUSDC,BNBUSDC,BOMEUSDC,BTCUSDC,CRVUSDC,DOGEUSDC,ENAUSDC,ETHFIUSDC,ETHUSDC,FILUSDC,HBARUSDC,IPUSDC,KAITOUSDC,LINKUSDC,LTCUSDC,NEARUSDC,NEOUSDC,ORDIUSDC,PENGUUSDC,PNUTUSDC,SOLUSDC,SUIUSDC,TIAUSDC,TRUMPUSDC,UNIUSDC,WIFUSDC,WLDUSDC,WLFIUSDC,XRPUSDC,ZECUSDC
+    </div>
+    <div class="pair-badges">
+      <span class="pair-badge">BTCUSDC</span><span class="pair-badge">ETHUSDC</span><span class="pair-badge">SOLUSDC</span><span class="pair-badge">DOGEUSDC</span><span class="pair-badge">XRPUSDC</span><span class="pair-badge">ADAUSDC</span><span class="pair-badge">AVAXUSDC</span><span class="pair-badge">LINKUSDC</span><span class="pair-badge alt">+30 more</span>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Useful Commands -->
+<section class="section reveal visible reveal-d3">
+  <div class="section-title"><span>08</span><h2>Useful Commands</h2></div>
+  <div class="card">
+    <table class="specs-table">
+      <tr><th>Command</th><th>Purpose</th></tr>
+      <tr><td>systemctl status rebirth-trader</td><td>Health check — uptime, memory, PID</td></tr>
+      <tr><td>journalctl -u rebirth-trader -f</td><td>Follow live log output</td></tr>
+      <tr><td>journalctl -u rebirth-trader -n 100</td><td>Last 100 log lines</td></tr>
+      <tr><td>journalctl -u rebirth-trader --since "1 hour ago"</td><td>Recent activity</td></tr>
+      <tr><td>tail -1 logs/state.jsonl | python3 -m json.tool</td><td>Latest state snapshot (positions, capital)</td></tr>
+      <tr><td>grep '"event":"trade_close"' logs/hfscalper_*.jsonl | tail -5</td><td>Recent closed trades</td></tr>
+      <tr><td>systemctl restart rebirth-trader</td><td>Full restart</td></tr>
+      <tr><td>systemctl kill -s SIGKILL rebirth-trader</td><td>Force kill (workaround for hang on stop)</td></tr>
+      <tr><td>systemctl stop && systemctl disable && rm ...service</td><td>Full service removal</td></tr>
+    </table>
+    <div class="warn" style="margin-top:16px"><strong>⚠ Known:</strong> <code>systemctl stop</code> may hang due to an asyncio signal propagation issue under systemd. Workaround: <code>systemctl kill -s SIGKILL rebirth-trader</code> then <code>systemctl start rebirth-trader</code>. The bot is designed to survive unclean kills via state persistence.</div>
+  </div>
+</section>
+
+<!-- 9. Future Enhancements -->
+<section class="section reveal visible">
+  <div class="section-title"><span>09</span><h2>Future Enhancements</h2></div>
+  <div class="card">
+    <div class="enh-list">
+      <div class="enh-item"><span class="enh-icon">🔄</span><span>Copy Trading</span></div>
+      <div class="enh-item"><span class="enh-icon">📊</span><span>Forex, Stocks &amp; Options</span></div>
+      <div class="enh-item"><span class="enh-icon">💹</span><span>MetaTrader Support</span></div>
+      <div class="enh-item"><span class="enh-icon">🏦</span><span>Partnered Brokers</span></div>
+      <div class="enh-item"><span class="enh-icon">🧠</span><span>Machine Learning</span></div>
+      <div class="enh-item"><span class="enh-icon">🤖</span><span>AI Integration</span></div>
+      <div class="enh-item enh-full"><span class="enh-icon">📱</span><span>Official iOS &amp; Android Application</span></div>
+    </div>
+    <p style="font-size:12.5px;color:var(--text-secondary);margin-top:14px;line-height:1.6;text-align:center;opacity:0.5">Roadmap items — planned for future releases.</p>
+  </div>
+</section>
+
+<!-- 10. Buy Source -->
+<section class="section reveal visible">
+  <div class="card buy-section">
+    <h3>Get the Source</h3>
+    <p>Full codebase. 30 days updates. Ready to deploy on your laptop, server and mobile. Modify, enhance, rebrand ALL at your own risks.</p>
+    <a href="mailto:finland.lasme@gmail.com" class="btn-buy" id="buyBtn">
+      BUY SOURCE — <span class="buy-price">$—</span>
+    </a>
+    <p class="buy-footnote">Price tracks the bot's live realized profit.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Rebirth Trader v3.0.0 — © 2026 — All rights reserved.</p>
+  <div class="footer-risk">
+    <strong>⚠ Risk Warning:</strong> Trading cryptocurrency futures involves substantial risk of loss and is not suitable for all investors. Past performance does not guarantee future results. This bot is provided as-is for educational purposes — use at your own risk.
+  </div>
+</footer>
+<script>
+// Mobile menu toggle
+function toggleMenu() {
+  var overlay = document.getElementById('mobileOverlay');
+  var btn = document.querySelector('.hamburger');
+  if (!overlay) return;
+  var isOpen = overlay.classList.toggle('open');
+  if (btn) btn.classList.toggle('active');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+
+// Buy source price
+async function updateBuyPrice() {
+  try {
+    const r = await fetch('/stats.json?_=' + Date.now());
+    if (!r.ok) return;
+    const d = await r.json();
+    const pnl = (d.session?.closed_pnl || d.total_pnl || 0);
+    const els = document.querySelectorAll('.buy-price');
+    els.forEach(el => el.textContent = '$' + (4999 + pnl).toFixed(2));
+  } catch(e) {}
+}
+updateBuyPrice();
+setInterval(updateBuyPrice, 30000);
+</script>
+</body>
+</html>
