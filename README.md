@@ -95,14 +95,17 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 ## BUY SOURCE
 
-> **Purchase includes:**
+**$1,600 + live realized P&L** — Price tracks the bot's earnings because its value grows with every trade it executes.
+
+> **What $1,600 gets you:**
+>
+> This isn't a weekend script. Rebirth Trader represents **6+ months of full-time development** — thousands of lines of async architecture, five-layer exit logic, 500+ pair WebSocket streaming, crash-safe state persistence, and a live dashboard. Every component was built, broken, rebuilt, and **refined against real capital in live markets** — not backtests, not paper trading. The bot you see running at [72.61.160.72](http://72.61.160.72) has closed **76+ real trades** with a **55%+ win rate**.
+>
+> You're buying a **battle-tested production system** that took half a year to build, debug, and validate. Not a script — a complete trading infrastructure.
 >
 > ✓ Complete Python source code — all modules, configs, and build tooling
->
 > ✓ Full internal documentation — architecture reference with implementation details
->
 > ✓ 30 days of updates — latest features and improvements
->
 > ✓ Ready to deploy — VPS, laptop, or mobile (iOS & Android supported)
 >
 > **To inquire:** Open an issue on this repository or visit the [live demo website](http://72.61.160.72)
