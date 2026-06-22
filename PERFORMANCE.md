@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-06-22 00:46:29 UTC*
+*Updated: 2026-06-22 12:33:32 UTC*
 
 Real-time performance metrics from the live trading instance at **[72.61.160.72](http://72.61.160.72)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $12.58 |
+| **Wallet Balance** | $12.11 |
 | **Initial Capital** | $9.49 |
-| **Realized P&L** | $3.71 |
-| **Unrealized P&L** | $-0.62 |
-| **Total P&L** | $3.09 |
-| **Win Rate** | 55.3% |
-| **Closed Trades** | 76 |
-| **Wins / Losses** | 42W / 34L |
-| **Active Positions** | 21 |
+| **Realized P&L** | $2.66 |
+| **Unrealized P&L** | $-0.04 |
+| **Total P&L** | $2.62 |
+| **Win Rate** | 53.4% |
+| **Closed Trades** | 88 |
+| **Wins / Losses** | 47W / 41L |
+| **Active Positions** | 24 |
 | **Avg Win** | $0.26 |
 | **Avg Loss** | $-0.23 |
-| **Total Fees** | $0.36 |
-| **Bot Uptime** | 8h 10m |
+| **Total Fees** | $0.43 |
+| **Bot Uptime** | 9h 11m |
 
 ---
 
@@ -39,12 +39,12 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Trailing Stop** | 26x | $4.79 |
-| **Stop Loss** | 23x | $-6.01 |
-| **Take Profit** | 15x | $5.79 |
-| **Loss Trail** | 11x | $-1.65 |
+| **Trailing Stop** | 29x | $5.31 |
+| **Stop Loss** | 28x | $-7.42 |
+| **Take Profit** | 17x | $6.63 |
+| **Loss Trail** | 13x | $-2.06 |
 | **Emergency close: 31s after ori** | 1x | $0.17 |
-| **Total** | 76x | $3.09 |
+| **Total** | 88x | $2.62 |
 
 ## Restart History
 
