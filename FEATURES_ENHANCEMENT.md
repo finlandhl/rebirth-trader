@@ -48,6 +48,17 @@ Embedded web UI accessible via browser:
 - Trade history with exit reasons
 - Multi-language support
 
+## Copy Trading (Multi-Account)
+
+Real-time trade mirroring across multiple Binance Futures accounts from a single master instance. When the master bot opens, closes, or adjusts a position, the same action is relayed to all configured follower accounts simultaneously — without requiring full bot instances on each account.
+
+- **Master-slave architecture** — One primary trading instance broadcasts actions to N follower accounts
+- **Action relay** — Entry, exit, hedge, and trail events are mirrored with configurable delay and offset
+- **Per-account risk scaling** — Each follower can apply its own leverage and position size multiplier relative to the master
+- **Independent safety** — Follower accounts maintain their own stop-loss, capital ceiling, and symbol blacklist — a master action is never blindly relayed if it would violate a follower's risk rules
+- **Lightweight** — Followers require only API credentials and risk config — no full engine instance, no WebSocket streams, no position monitors
+- **Heterogeneous support** — Mix accounts with different Binance sub-account tiers, margin modes, and leverage limits
+
 ## Cloudflare Tunnel Integration
 
 One-command public internet exposure via Cloudflare Tunnel. The dashboard becomes accessible from anywhere with a single command flag.
@@ -83,3 +94,30 @@ Full compliance with Binance's WebSocket routing architecture. Supports all data
 ## Command-Line Interface
 
 All features accessible via CLI flags. Comprehensive options for symbol selection (specific or all pairs), persistence mode, automation mode, dashboard enabling, tunnel setup, logging controls, and symbol blacklisting.
+
+---
+
+## Roadmap
+
+Planned enhancements for future releases — priorities driven by buyer demand and market opportunity.
+
+### In Development
+
+| Enhancement | Description |
+|-------------|-------------|
+| **Multi-Account Copy Trading** | Master-slave trade mirroring across N Binance Futures accounts with per-account risk scaling, leverage offset, and independent safety controls |
+
+### Planned
+
+| Enhancement | Description |
+|-------------|-------------|
+| **Forex, Stocks & Options** | Multi-asset support beyond crypto futures — connect to traditional brokers and trade forex pairs, equities, and options through a unified engine interface |
+| **MetaTrader Integration** | Direct MT4/MT5 bridge — feed Rebirth signals into MetaTrader platforms for execution on supported brokers, leveraging MT's order routing and risk tools |
+| **Partnered Brokers** | Pre-integrated broker partnerships with optimized API adapters, reduced latency routing, and preferential fee structures |
+| **Machine Learning Signals** | ML-based signal generation layer — train models on historical and real-time data to generate entry/exit confidence scores that augment the existing rule-based engine |
+| **Advanced AI Integration** | LLM-powered market analysis, natural language strategy configuration, and adaptive parameter tuning based on evolving market regimes |
+| **Official iOS & Android Application** | Native mobile app with real-time monitoring, push notifications, trade approval workflows, and one-tap deployment for phone-based trading |
+
+---
+
+*Rebirth Trader v3.0.0 — © 2026*

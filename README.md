@@ -40,6 +40,7 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 | **Multi-Layered Exit Logic** | Five independent exit strategies operating in priority order |
 | **Trend-Aware Trail Suppression** | Reduces premature exits during strong trend-aligned moves |
 | **Loss Recovery Trail** | Adaptive trail that activates beyond a configurable loss threshold |
+| **Multi-Account Copy Trading** | Master-slave trade mirroring across multiple Binance Futures accounts with per-account risk scaling |
 | **Real-Time Dashboard** | Embedded web UI showing live P&L, equity curve, and positions |
 | **State Persistence** | Full save and recovery of positions and config across restarts |
 | **Automated Operation** | Systemd integration (servers) or background process (mobile) |
