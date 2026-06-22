@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-06-22 00:32:55 UTC*
+*Updated: 2026-06-22 00:40:07 UTC*
 
 Real-time performance metrics from the live trading instance at **[72.61.160.72](http://72.61.160.72)**.
 
@@ -11,8 +11,9 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 | Metric | Value |
 |--------|-------|
 | **Wallet Balance** | $12.58 |
-| **Realized P&L** | $3.89 |
-| **Unrealized P&L** | $-0.80 |
+| **Initial Capital** | $9.49 |
+| **Realized P&L** | $3.87 |
+| **Unrealized P&L** | $-0.78 |
 | **Total P&L** | $3.09 |
 | **Win Rate** | 55.3% |
 | **Closed Trades** | 76 |
@@ -21,7 +22,7 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 | **Avg Win** | $0.26 |
 | **Avg Loss** | $-0.23 |
 | **Total Fees** | $0.36 |
-| **Bot Uptime** | 7h 56m |
+| **Bot Uptime** | 8h 3m |
 
 ---
 
@@ -48,5 +49,14 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 ---
 
 > Data refreshes automatically every 12 hours. See the [live dashboard](http://72.61.160.72) for real-time updates.
+
+
+---
+
+### ⚠ Disclaimers
+
+**Educational Purpose Only** — These metrics are provided for informational and educational purposes. They do not constitute financial advice, a recommendation, or a guarantee of future results. Trading cryptocurrency futures carries substantial risk.
+
+**Computation Buffer** — All figures shown are derived from the bot's internal tracking and may differ from Binance's official account statements. Discrepancies can arise from rounding, fee scheduling, funding rate timing, and API response delays. Always verify against your Binance wallet history for absolute accuracy.
 
 *Rebirth Trader v3.0.0 — © 2026*
