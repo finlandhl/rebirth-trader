@@ -89,6 +89,7 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 | [FEATURES_ENHANCEMENT.md](FEATURES_ENHANCEMENT.md) | Complete feature catalog and technical capabilities |
 | [HFSCALPER_WORKFLOW.md](HFSCALPER_WORKFLOW.md) | Core trading engine workflow |
 | [LIVE_TRADING.md](LIVE_TRADING.md) | Setup, deployment, and operational guide |
+| [PERFORMANCE.md](PERFORMANCE.md) | Live trading metrics — updated automatically |
 
 ---
 
