@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-06-22 00:40:07 UTC*
+*Updated: 2026-06-22 00:46:29 UTC*
 
 Real-time performance metrics from the live trading instance at **[72.61.160.72](http://72.61.160.72)**.
 
@@ -12,8 +12,8 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 |--------|-------|
 | **Wallet Balance** | $12.58 |
 | **Initial Capital** | $9.49 |
-| **Realized P&L** | $3.87 |
-| **Unrealized P&L** | $-0.78 |
+| **Realized P&L** | $3.71 |
+| **Unrealized P&L** | $-0.62 |
 | **Total P&L** | $3.09 |
 | **Win Rate** | 55.3% |
 | **Closed Trades** | 76 |
@@ -22,7 +22,7 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 | **Avg Win** | $0.26 |
 | **Avg Loss** | $-0.23 |
 | **Total Fees** | $0.36 |
-| **Bot Uptime** | 8h 3m |
+| **Bot Uptime** | 8h 10m |
 
 ---
 
@@ -45,6 +45,21 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 | **Loss Trail** | 11x | $-1.65 |
 | **Emergency close: 31s after ori** | 1x | $0.17 |
 | **Total** | 76x | $3.09 |
+
+## Restart History
+
+| # | Time (UTC) | Reason |
+|---|------------|--------|
+| 1 | 2026-06-21 08:28:16 UTC | Deployment update — bot restarted with new feature additions |
+| 2 | 2026-06-21 12:55:20 UTC | Configuration tweak — risk parameter adjustment |
+| 3 | 2026-06-21 13:01:46 UTC | Post-config restart — systemd auto-restart after test cycle |
+| 4 | 2026-06-21 13:39:55 UTC | Bug fix patch — corrected exit logic edge case |
+| 5 | 2026-06-21 14:01:29 UTC | Performance tuning — stream buffer optimization |
+| 6 | 2026-06-21 15:43:16 UTC | WebSocket reconnect — stream health update |
+| 7 | 2026-06-21 16:09:22 UTC | Feature update — enhanced trailing stop suppression |
+| 8 | 2026-06-21 16:11:54 UTC | Hotfix — symbol blacklist tweak |
+| 9 | 2026-06-21 16:24:08 UTC | Bug fix — hedge mode state restoration |
+| 10 | 2026-06-21 16:34:47 UTC | Final deployment — current stable instance |
 
 ---
 
