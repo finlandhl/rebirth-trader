@@ -13,7 +13,7 @@
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-tunnel-F38020)
 ![Selenium](https://img.shields.io/badge/Selenium-screenshots-43B02A)
 
-> A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Tested on iOS (iSH, Termius) and Android (Termux).
+> A terminal-based, fully automated trading system engineered for 24/7 operation on any device with a Linux environment or CLI terminal — from VPS servers to mobile phones. Developed and refined with real capital across live market conditions. Tested on iOS (iSH, Termius) and Android (Termux).
 
 ## See It Live
 
@@ -58,6 +58,8 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 **Crash-proof** — State is saved every 60 seconds. Restart the bot and it resumes exactly where it left off, all positions restored.
 
 **Fault isolated** — Each trade runs in its own coroutine. One position failing never affects the others.
+
+**Real capital, real markets** — Every component was developed and refined against live market data with actual funds. Not a backtest. Not paper trading.
 
 ---
 

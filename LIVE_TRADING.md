@@ -1,5 +1,7 @@
 # Live Trading — Production Guide
 
+> Developed and refined with real capital across live market conditions. Every strategy, exit logic, and safeguard was battle-tested against actual Binance Futures order flow — not historical simulations.
+
 ## Deployment
 
 Deploying Rebirth Trader for live trading is a one-command process that:
