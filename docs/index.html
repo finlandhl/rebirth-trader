@@ -414,7 +414,7 @@
 
     /* Buy source button */
     .buy-section { text-align: center; padding: 32px; }
-    .buy-section h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .buy-title { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
     .buy-section p { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.5; }
     .btn-buy {
       display: inline-flex;
@@ -434,44 +434,18 @@
     .btn-buy:hover { background: rgba(232,72,58,0.15); border-color: var(--accent); transform: translateY(-1px); }
     .buy-footnote { font-size: 11px; color: var(--text-secondary); margin-top: 10px; opacity: 0.5; }
 
-    /* Buy section redesign */
-    .buy-badge {
-      display: inline-block;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
-      padding: 4px 14px; border-radius: 20px;
-      background: rgba(246,137,54,0.12);
-      border: 1px solid rgba(246,137,54,0.2);
-      color: var(--amber); margin-bottom: 16px;
-      text-transform: uppercase;
-    }
-    .buy-price-block { margin-bottom: 12px; }
+    /* Buy section — clean */
+    .buy-price-block { margin-bottom: 10px; }
     .buy-price-main { font-size: 36px; font-weight: 800; color: var(--text); letter-spacing: -0.03em; }
     .buy-price-plus { font-size: 22px; color: var(--text-secondary); margin: 0 6px; vertical-align: super; }
     .buy-price-live { font-size: 13px; font-weight: 600; color: var(--accent); display: block; margin-top: 2px; }
-    .buy-desc {
-      font-size: 13px; color: var(--text-secondary); line-height: 1.65;
-      margin: 0 auto 16px; max-width: 480px;
-    }
-    .buy-strip {
-      display: inline-block;
-      background: linear-gradient(135deg, rgba(246,137,54,0.08), rgba(232,72,58,0.05));
-      border: 1px solid rgba(246,137,54,0.15); border-radius: 8px;
-      padding: 8px 16px; font-size: 11.5px; color: var(--amber);
-      margin-bottom: 20px;
-    }
-    .buy-tweak { margin-bottom: 18px; }
-    .buy-tweak h4 { font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
-    .buy-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+    .buy-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; max-width: 480px; margin: 0 auto 16px; }
+    .buy-divider { width: 60px; height: 1px; background: var(--border); margin: 18px auto; }
+    .buy-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 0 auto 14px; }
+    .buy-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-bottom: 16px; }
     .buy-tags .feat-badge { font-size: 11px; padding: 4px 10px; }
-    .buy-mid-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
-    .buy-white-label {
-      font-size: 12.5px; color: var(--text-secondary); line-height: 1.6;
-      margin-bottom: 18px; padding: 10px 16px;
-      background: rgba(246,137,54,0.06);
-      border: 1px solid rgba(246,137,54,0.12); border-radius: 8px;
-      display: inline-block;
-    }
-    .buy-white-label strong { color: var(--amber); }
+    .buy-note { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; display: inline-block; padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 18px; }
+    .buy-note strong { color: var(--text); }
 
   </style>
 </head>
@@ -715,7 +689,7 @@ uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --p
 <!-- 10. Buy Source -->
 <section class="section reveal visible">
   <div class="card buy-section" style="padding:32px">
-    <div class="buy-badge">🔥 Early Buyer Access</div>
+    <h3 class="buy-title">Get the Source</h3>
 
     <div class="buy-price-block">
       <span class="buy-price-main">$1,600</span>
@@ -726,29 +700,28 @@ uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --p
       6+ months of development refined against real capital in live markets. Not a script. A complete production trading infrastructure.
     </p>
 
-    <div class="buy-strip">⏳ Limited-time — securing the current price before future revisions</div>
+    <div class="buy-divider"></div>
 
-    <div class="buy-tweak">
-      <h4>Buy the source, tweak everything:</h4>
-      <div class="buy-tags">
-        <span class="feat-badge">Risk per trade</span>
-        <span class="feat-badge">Leverage</span>
-        <span class="feat-badge">Exit thresholds</span>
-        <span class="feat-badge">Trading hours</span>
-        <span class="feat-badge">Markets</span>
-        <span class="feat-badge">Blacklist rules</span>
-      </div>
+    <p class="buy-text">The source is available for a limited time to early buyers — securing the current price before future revisions.</p>
+
+    <div class="buy-tags">
+      <span class="feat-badge">Risk per trade</span>
+      <span class="feat-badge">Leverage 10x–30x</span>
+      <span class="feat-badge">Exit thresholds</span>
+      <span class="feat-badge">Trading hours</span>
+      <span class="feat-badge">Symbol lists</span>
+      <span class="feat-badge">Blacklist rules</span>
     </div>
 
-    <p class="buy-mid-text">
+    <p class="buy-text">
       Buy the source code, tweak every parameter, enhance it the way you want — all at your own risk. The bot is designed to be hackable: risk per trade, leverage, exit thresholds, trading hours, markets, everything is configurable.
     </p>
 
-    <p class="buy-mid-text">
+    <p class="buy-text">
       <strong style="color:var(--text)">The original Rebirth Trader</strong> is available at <strong style="color:var(--accent)">rebirthtrader.com</strong> only. It is continuously tested and enhanced with new features, running on real funds in real markets — every trade is verifiable on the live Dashboard.
     </p>
 
-    <div class="buy-white-label">
+    <div class="buy-note">
       <strong>White Label buyers</strong> get lifetime upgrades and dedicated support — contact for details.
     </div>
 
