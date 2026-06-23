@@ -4,6 +4,16 @@ users.json
 # Environment files
 .env
 
+# Source code — NOT for public GitHub (storefront only)
+/src/
+/main.py
+/streamer.py
+/pyproject.toml
+/uv.lock
+/.python-version
+/rebirth-trader.sh
+/.claude/
+
 # Generated cache
 /tmp/gen_stats_cache.json
 /tmp/gen_stats_offset.json
