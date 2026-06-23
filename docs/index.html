@@ -296,7 +296,7 @@
       background: rgba(232,72,58,0.10);
       border: 1px solid rgba(232,72,58,0.3);
       border-radius: 4px;
-      font-size: 7px;
+      font-size: 9.5px;
       line-height: 1.5;
       color: rgba(255,255,255,0.6);
       max-width: 360px;
@@ -304,7 +304,12 @@
       margin-right: auto;
       letter-spacing: 0.01em;
     }
-    .footer-risk strong { color: #E8483A; font-weight: 800; font-size: 8px; }
+    .footer-risk strong {
+      color: #E8483A;
+      font-weight: 800;
+    }
+    .footer-risk p { margin: 0; font-size: 9.5px; }
+    .footer-risk p + p { margin-top: 6px; }
 
     /* Lang toggle */
     
@@ -687,7 +692,8 @@ uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --p
 <footer>
   <p>Rebirth Trader v3.0.3 — © 2026 — All rights reserved.</p>
   <div class="footer-risk">
-    <strong>⚠ Risk Warning:</strong> Trading cryptocurrency futures involves substantial risk of loss and is not suitable for all investors. Past performance does not guarantee future results. This bot is provided as-is for educational purposes — use at your own risk.
+    <p><strong>⚠ Risk Warning:</strong> Trading cryptocurrency futures involves substantial risk of loss and is not suitable for all investors. Past performance does not guarantee future results. This bot is provided as-is for educational purposes — use at your own risk.</p>
+    <p><strong>⚠ Disclaimer:</strong> Rebirth Trader is developed by AI engineers for educational and informational purposes only. We are not financial advisors, brokers, or regulated entities. The software is sold as-is — buyers assume full responsibility for compliance, usage, and outcomes. We accept no liability for capital loss, trading losses, regulatory violations, or misuse including money laundering.</p>
   </div>
 </footer>
 <script>

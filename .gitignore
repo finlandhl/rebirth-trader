@@ -1,0 +1,14 @@
+# API key files — never commit
+users.json
+
+# Environment files
+.env
+
+# Generated cache
+/tmp/gen_stats_cache.json
+/tmp/gen_stats_offset.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/

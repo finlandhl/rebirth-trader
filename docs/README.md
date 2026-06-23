@@ -1,6 +1,6 @@
 # Rebirth Trader — Binance Futures Scalping System
 
-**Version 3.0.0** | **Production Ready** | **Systemd-Managed**
+**Version 3.0.3** | **Production Ready** | **Systemd-Managed**
 
 A high-frequency Binance Futures scalping bot with state persistence, systemd auto-restart, embedded live dashboard, hedge-mode position management, and multi-layer exit logic.
 
@@ -58,7 +58,7 @@ journalctl -u rebirth-trader -f
 | `--live` | bool | Real money trading on Binance Futures |
 | `--persist` | bool | Save/restore state + auto-install systemd service |
 | `--auto` / `-a` | bool | Bypass all confirmations |
-| `--ui` | bool | Start embedded web dashboard on port 3000 |
+|| `--ui` | bool | Start embedded web dashboard on port 8080 |
 | `--tunnel` | bool | Create a Cloudflare Tunnel for public internet access (requires `--ui`) |
 | `--loghfs` | bool | Enable JSONL event logging (legacy — may need restart cycle) |
 | `--symbols` | str | Comma-separated symbols (mutually exclusive with `--all`) |
@@ -76,7 +76,7 @@ journalctl -u rebirth-trader -f
 ```
 streamer.py → RebirthTraderCLI → HFScalper → Position.monitor() (per-position coroutine)
                                           ↓
-                              UI Server (port 3000)
+                              UI Server (port 8080)
                                 ↓ nginx proxy
                           /dashboard/ + /api/ → rebirthtrader.com
                                 ↓ cloudflared
@@ -150,7 +150,7 @@ Loss trail and trailing stop are both **candle-gated** — suppressed when 5m EM
 
 ### Embedded Web Dashboard (`--ui`)
 The bot serves a real-time monitoring dashboard from its built-in UI server:
-- **Direct:** `http://<host>:3000/` (binds to `0.0.0.0` for LAN access)
+- **Direct:** `http://<host>:8080/` (binds to `0.0.0.0` for LAN access)
 - **Nginx Proxy:** https://rebirthtrader.com/dashboard/
 - **Tunnel:** `https://<random>.trycloudflare.com` (when `--tunnel` is used)
 
@@ -176,7 +176,7 @@ The dashboard displays:
 When `--tunnel` is passed alongside `--ui`, the bot:
 1. Detects cloudflared at `/usr/local/bin/cloudflared`
 2. Auto-installs it if missing (via `_install_cloudflared()`)
-3. Spawns `cloudflared tunnel --url http://localhost:3000` as a subprocess
+3. Spawns `cloudflared tunnel --url http://localhost:8080` as a subprocess
 4. Parses and prints the public TryCloudflare URL on startup
 5. Kills the tunnel subprocess cleanly on shutdown
 6. Requires only outbound connectivity (UFW inbound rules unaffected)
@@ -227,7 +227,7 @@ ls -lh logs/state.jsonl
 
 - **State Persistence (`--persist`):** JSONL crash-safe snapshots every **10s** to `logs/state.jsonl`. Full position restoration on restart with hedge pair linking.
 - **Systemd Integration:** Auto-installs `rebirth-trader.service` with `Restart=always`, survives SSH disconnect, reboot, and crashes.
-- **Embedded Dashboard (`--ui`):** Real-time web dashboard on port 3000 with live P&L, equity curve, positions table, trade journal, and auto-refresh (10s).
+- **Embedded Dashboard (`--ui`):** Real-time web dashboard on port 8080 with live P&L, equity curve, positions table, trade journal, and auto-refresh (10s).
 - **Cloudflare Tunnel (`--tunnel`):** Public internet access via TryCloudflare — auto-installs cloudflared, subprocess lifecycle managed by the bot.
 - **Nginx Integration:** `/dashboard/` and `/api/` proxied through port 80 nginx server for the main landing page.
 - **Hedge Mode:** Dual-side positions (long + short per symbol) enabled via Binance Hedge Mode, with defensive hedge gate (candle-confirmed).
@@ -256,7 +256,7 @@ ls -lh logs/state.jsonl
 | `logs/hfscalper_YYYYMMDD_HHMMSS.jsonl` | JSONL append | Per-event (optional) | All trading events (~60 types, only with `--loghfs`) |
 | `logs/raw.jsonl` | JSONL append | Per-message | Raw WebSocket data (when `--raw`) |
 
-**State file growth:** ~30.5 MB/hour at 10s interval → ~5 GB/week. Monitor disk usage accordingly.
+- **State file growth:** Depends on write frequency and position count. Cleared on demand.
 
 ---
 
@@ -266,11 +266,15 @@ ls -lh logs/state.jsonl
 2. **systemctl stop hang:** Pre-existing asyncio signal propagation issue. Workaround: `systemctl kill -s SIGKILL`.
 3. **AAVEUSDC qty ≤ 0:** High-priced coins (AAVE ~$67) may fail to meet $5 min notional with small capital. Pre-existing capital constraint.
 4. **--loghfs restart:** May need one kill/restart cycle before log files begin writing.
-5. **Port race on restart:** Bot holds port 3000; new instance's UI fails silent if port isn't freed. Verify port free before restart.
+5. **Port race on restart:** Bot holds port 8080; new instance's UI fails silent if port isn't freed. Verify port free before restart.
+6. **Zombie position detection:** After 10 consecutive close failures, bot queries Binance. If position qty=0 on exchange → force-removes from state as `force_removed_zombie`. If position exists → retries with direct market order. If API fails → logs and keeps retrying.
+7. **Monitor exit retry (fixed):** Previously `close_position()` fail caused immediate `return` exiting the monitor loop forever. Now retries every 0.5s, with emergency timeout at 30s triggering zombie check.
+8. **Reversal API fallback removed:** `_detect_reversal` no longer calls Binance klines REST API when buffer insufficient. Returns `None` instead. Zero API calls during reversal checks.
+9. **Equity curve (incremental RAM):** First request does full scan of state.jsonl. Subsequent requests only append new lines from file offset. No files/timers/caches.
 
 ---
 
-**Last Updated:** June 21, 2026
-**Current Positions:** 22 max concurrent
+**Last Updated:** June 22, 2026
+**Current Positions:** 20 max concurrent
 **Capital:** Variable (capped at $1000 live, 90% utilization)
 **Dashboard Port:** 3000 (0.0.0.0), proxied via nginx on rebirthtrader.com
