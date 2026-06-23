@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-06-23 02:45:40 UTC*
+*Updated: 2026-06-23 14:46:43 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $43.32 |
-| **Initial Capital** | $45.52 |
-| **Realized P&L** | $-3.53 |
-| **Unrealized P&L** | $1.33 |
-| **Total P&L** | $-2.20 |
-| **Win Rate** | 46.2% |
-| **Closed Trades** | 13 |
-| **Wins / Losses** | 6W / 7L |
-| **Active Positions** | 21 |
-| **Avg Win** | $1.02 |
-| **Avg Loss** | $-1.19 |
-| **Total Fees** | $0.30 |
-| **Bot Uptime** | 12m |
+| **Wallet Balance** | $35.04 |
+| **Initial Capital** | $35.65 |
+| **Realized P&L** | $-1.71 |
+| **Unrealized P&L** | $1.10 |
+| **Total P&L** | $-0.61 |
+| **Win Rate** | 53.3% |
+| **Closed Trades** | 30 |
+| **Wins / Losses** | 16W / 14L |
+| **Active Positions** | 22 |
+| **Avg Win** | $0.78 |
+| **Avg Loss** | $-0.94 |
+| **Total Fees** | $0.50 |
+| **Bot Uptime** | 1h 51m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | BELUSDT | $1.73 | Profit Target: 6.06% gain |
-| **Worst** | BLESSUSDT | $-1.97 | Stop Loss: -6.11% loss |
+| **Best** | BELUSDT | $1.53 | Profit Target: 6.02% gain |
+| **Worst** | BICOUSDT | $-1.76 | Stop Loss: -8.60% loss |
 
 ---
 
@@ -39,11 +39,11 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Trailing Stop** | 6x | $4.34 |
-| **Stop Loss** | 5x | $-7.71 |
-| **Loss Trail** | 1x | $-0.56 |
-| **Take Profit** | 1x | $1.73 |
-| **Total** | 13x | $-2.20 |
+| **Trailing Stop** | 12x | $7.33 |
+| **Stop Loss** | 11x | $-11.36 |
+| **Take Profit** | 4x | $5.17 |
+| **Loss Trail** | 3x | $-1.74 |
+| **Total** | 30x | $-0.61 |
 
 ## Restart History
 
