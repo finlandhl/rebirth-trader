@@ -1387,3 +1387,17 @@ ConnectionResetError: [Errno 104] Connection reset by peer
 127.0.0.1 - - [23/Jun/2026 14:27:21] "GET /api/stats?_=1782224845156 HTTP/1.1" 200 -
 127.0.0.1 - - [23/Jun/2026 14:27:38] "GET /api/stats?_=1782224860518 HTTP/1.1" 200 -
 127.0.0.1 - - [23/Jun/2026 14:27:38] "GET /api/equity?_=1782224860523 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:28:04] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:28:18] "GET /api/equity?_=1782224901557 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:28:18] "GET /api/stats?_=1782224901556 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:28:21] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:28:51] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:29:21] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:29:51] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:30:21] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:30:51] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:31:09] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:31:39] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:32:09] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:32:39] "GET /api/stats HTTP/1.1" 200 -
+127.0.0.1 - - [23/Jun/2026 14:36:11] "GET /api/stats HTTP/1.1" 200 -
