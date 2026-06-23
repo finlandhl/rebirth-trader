@@ -16,10 +16,9 @@ After initial setup, the bot manages itself. No manual commands needed for norma
 
 ## State Persistence
 
-The bot continuously saves its operational state to disk using a crash-safe append-only format:
+The bot continuously saves its operational state to disk every **20 seconds** using a crash-safe append-only format:
 
-- All active positions are serialized with full metadata
-- State writes are non-blocking — trading performance is unaffected
+- All active positions are serialized with full metadata — state writes are non-blocking
 - On restart, the bot auto-detects saved state and restores all positions
 - Hedge relationships are re-established in a two-pass restoration
 - Monitoring resumes automatically for all recovered positions
@@ -43,6 +42,8 @@ The embedded web UI provides real-time access to:
 - **Active positions** — Entry price, current P&L, duration, direction
 - **Trade history** — Closed trades with exit reasons
 - **Internationalization** — Configurable language support
+
+For accurate monitoring including active positions, use your **Binance web interface** or **mobile app** — they reflect real-time exchange data directly.
 
 ## Remote Access
 
