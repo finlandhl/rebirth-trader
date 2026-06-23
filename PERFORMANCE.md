@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-06-22 12:33:32 UTC*
+*Updated: 2026-06-23 00:33:40 UTC*
 
 Real-time performance metrics from the live trading instance at **[72.61.160.72](http://72.61.160.72)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $12.11 |
-| **Initial Capital** | $9.49 |
-| **Realized P&L** | $2.66 |
-| **Unrealized P&L** | $-0.04 |
-| **Total P&L** | $2.62 |
-| **Win Rate** | 53.4% |
-| **Closed Trades** | 88 |
-| **Wins / Losses** | 47W / 41L |
-| **Active Positions** | 24 |
-| **Avg Win** | $0.26 |
-| **Avg Loss** | $-0.23 |
-| **Total Fees** | $0.43 |
-| **Bot Uptime** | 9h 11m |
+| **Wallet Balance** | $45.36 |
+| **Initial Capital** | $45.52 |
+| **Realized P&L** | $-1.10 |
+| **Unrealized P&L** | $0.93 |
+| **Total P&L** | $-0.16 |
+| **Win Rate** | 57.1% |
+| **Closed Trades** | 7 |
+| **Wins / Losses** | 4W / 3L |
+| **Active Positions** | 18 |
+| **Avg Win** | $0.99 |
+| **Avg Loss** | $-1.38 |
+| **Total Fees** | $0.16 |
+| **Bot Uptime** | 3h 12m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | BELUSDT | $0.72 | Profit Target: 13.25% gain |
-| **Worst** | REUSDT | $-0.45 | Stop Loss: -5.04% loss |
+| **Best** | BELUSDT | $1.73 | Profit Target: 6.06% gain |
+| **Worst** | BLESSUSDT | $-1.97 | Stop Loss: -6.11% loss |
 
 ---
 
@@ -39,12 +39,11 @@ Real-time performance metrics from the live trading instance at **[72.61.160.72]
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Trailing Stop** | 29x | $5.31 |
-| **Stop Loss** | 28x | $-7.42 |
-| **Take Profit** | 17x | $6.63 |
-| **Loss Trail** | 13x | $-2.06 |
-| **Emergency close: 31s after ori** | 1x | $0.17 |
-| **Total** | 88x | $2.62 |
+| **Trailing Stop** | 3x | $2.23 |
+| **Stop Loss** | 2x | $-3.56 |
+| **Loss Trail** | 1x | $-0.56 |
+| **Take Profit** | 1x | $1.73 |
+| **Total** | 7x | $-0.16 |
 
 ## Restart History
 
