@@ -14,7 +14,12 @@ users.json
 /rebirth-trader.sh
 /.claude/
 
-# Generated cache
+# Internal documentation — NOT for public GitHub
+/docs/
+
+# Generated state / logs
+/logs/
+/reports/
 /tmp/gen_stats_cache.json
 /tmp/gen_stats_offset.json
 

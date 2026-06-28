@@ -502,9 +502,9 @@
   <div class="feat-grid">
     <div class="feat-card"><h3>6-Layer Exit System</h3><p>Stop Loss (4%), Loss Recovery Trail (3.5%+1.1%), Take Profit (6%), Trailing Stop (2.5%+0.092%), Time Limit (7d), Reversal Detection — checked in strict priority every second.</p></div>
     <div class="feat-card"><h3>Zero-API Price Buffer</h3><p>All 500+ USDT and 38 USDC pairs stream via WebSocket into in-memory deques (maxlen=120). Positions read from buffer — zero Binance API calls for monitoring. Sub-10ms latency.</p></div>
-    <div class="feat-card"><h3 class="amber">Candle-Enhanced Trail</h3><p>1m candle EMA(12/26) trend gate suppresses trailing stop when the trend matches the position direction — letting winners run and losers recover longer.</p></div>
+    <div class="feat-card"><h3 class="amber">Candle-Enhanced Trail</h3><p>15m candle EMA(12/26) trend gate suppresses trailing stop when the trend matches the position direction — letting winners run and losers recover longer.</p></div>
     <div class="feat-card"><h3>Hedge Mode</h3><p>Dual-side positions per symbol via Binance Hedge Mode. Defensive hedge with 24h timer + candle confirmation gate prevents premature hedging.</p></div>
-    <div class="feat-card"><h3 class="amber">State Persistence</h3><p>Crash-safe JSONL snapshots every 60s to <code style="font-size:11px">logs/state.jsonl</code>. Full position restoration on restart with hedge pair linking and monitor coroutine recreation.</p></div>
+    <div class="feat-card"><h3 class="amber">State Persistence</h3><p>Crash-safe JSONL snapshots every 20s to <code style="font-size:11px">logs/state.jsonl</code>. Full position restoration on restart with hedge pair linking and monitor coroutine recreation.</p></div>
     <div class="feat-card"><h3>Systemd Integration</h3><p>Auto-installs systemd service on first <code style="font-size:11px">--persist</code> run. <code style="font-size:11px">Restart=always</code> — survives SSH disconnect, reboot, and crashes.</p></div>
     <div class="feat-card"><h3 class="amber">Smart Scalping</h3><p>EMA 50/100 trend detection + RSI 14 filter + volatility check. Dynamic leverage: 10x–30x based on confidence score (0.2–1.0). Entries blocked when volatility exceeds 2.5x threshold.</p></div>
     <div class="feat-card"><h3>Symbol Blacklist</h3><p>Auto-suspends symbols after 3 consecutive losses for 24h (configurable). Pre-blacklist support for known-problematic pairs. Persisted across restarts.</p></div>
@@ -541,7 +541,7 @@
     </div>
     <div class="code-block">
 <span class="dim"># Full production command — 500+ USDT / 38 USDC pairs, live trading, systemd</span>
-uv run streamer.py --scalp --all --loghfs --live --persist --auto
+uv run streamer.py --scalp --all --live --persist --auto --ui --tunnel
     </div>
   </div>
 </section>
@@ -574,7 +574,7 @@ uv run streamer.py --scalp --loghfs --symbols BTCUSDC
     <h4 style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);opacity:0.8;margin-bottom:12px;margin-top:24px">4. Live Trading (Production)</h4>
     <div class="code-block">
 <span class="cmt"># First run — installs systemd service + starts trading</span>
-uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --persist --auto
+uv run streamer.py --scalp --all --live --persist --auto --ui
     </div>
 
     <div class="note"><strong>ℹ Auto-mode</strong> — <code>--auto</code> bypasses all interactive confirmations. Required for systemd / headless operation. The <code>REBIRTH_TRADER_SYSTEMD=1</code> environment variable also triggers auto-mode automatically.</div>
@@ -591,6 +591,10 @@ uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --p
       <tr><td>--live</td><td>bool</td><td>Real money trading on Binance Futures</td></tr>
       <tr><td>--persist</td><td>bool</td><td>Save/restore state + install systemd service</td></tr>
       <tr><td>--auto / -a</td><td>bool</td><td>Bypass all confirmations (headless/systemd operation)</td></tr>
+      <tr><td>--ui</td><td>bool</td><td>Start embedded web dashboard on port 8080</td></tr>
+      <tr><td>--tunnel</td><td>bool</td><td>Cloudflare Tunnel for public dashboard access (requires --ui)</td></tr>
+      <tr><td>--leaderboard</td><td>bool</td><td>Enable PnL-based entry priority ranking</td></tr>
+      <tr><td>--runners-min-trades</td><td>int</td><td>Min trades before labeling a symbol (default 2)</td></tr>
       <tr><td>--loghfs</td><td>bool</td><td>Enable JSONL event logging to logs/</td></tr>
       <tr><td>--symbols</td><td>str</td><td>Comma-separated trading pairs (mutually exclusive with --all)</td></tr>
       <tr><td>--all</td><td>bool</td><td>Trade all tradable futures symbols (mutually exclusive with --symbols)</td></tr>
@@ -617,9 +621,9 @@ uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --p
     <div class="deploy-card">
       <h3>☁️ VPS (Production) <span class="badge badge-rec">Best</span></h3>
       <p>One command auto-installs systemd: service survives reboot, SSH disconnect, and crashes. True 24/7 operation with zero manual intervention.</p>
-      <div class="code-inline">uv run streamer.py --scalp --symbols BTCUSDC,... --live --loghfs --persist --auto</div>
+      <div class="code-inline">uv run streamer.py --scalp --all --live --persist --auto --ui --tunnel</div>
       <div class="code-inline" style="margin-top:6px;color:var(--amber)"># Health check<br>systemctl status rebirth-trader</div>
-      <p style="margin-top:8px">Min requirements: 1 vCPU, 1GB RAM, 10GB storage, Ubuntu 22.04+</p>
+      <p style="margin-top:8px">Min requirements: 1 vCPU, 2GB RAM, 10GB (+50GB recommended for debug logging)</p>
     </div>
     <div class="deploy-card">
       <h3>📱 Android (Termux) <span class="badge badge-alt">Experimental</span></h3>
@@ -661,7 +665,7 @@ uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --p
       <tr><td>journalctl -u rebirth-trader -n 100</td><td>Last 100 log lines</td></tr>
       <tr><td>journalctl -u rebirth-trader --since "1 hour ago"</td><td>Recent activity</td></tr>
       <tr><td>tail -1 logs/state.jsonl | python3 -m json.tool</td><td>Latest state snapshot (positions, capital)</td></tr>
-      <tr><td>grep '"event":"trade_close"' logs/hfscalper_*.jsonl | tail -5</td><td>Recent closed trades</td></tr>
+      <tr><td>grep '"event":"trade_close"' logs/*.jsonl | tail -5</td><td>Recent closed trades</td></tr>
       <tr><td>systemctl restart rebirth-trader</td><td>Full restart</td></tr>
       <tr><td>systemctl kill -s SIGKILL rebirth-trader</td><td>Force kill (workaround for hang on stop)</td></tr>
       <tr><td>systemctl stop && systemctl disable && rm ...service</td><td>Full service removal</td></tr>
@@ -672,10 +676,10 @@ uv run streamer.py --scalp --symbols BTCUSDC,ETHUSDC,SOLUSDC --loghfs --live --p
 
 <!-- 9. Future Enhancements -->
 <section class="section reveal visible">
-  <div class="section-title"><span>09</span><h2>Future Enhancements</h2></div>
+  <div class="section-title"><span>09</span><h2>Future <span class="accent">Enhancements</span></h2></div>
   <div class="card">
+    <p style="font-size:12.5px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;opacity:0.5">Planned for future releases. <strong style="color:var(--text)">Copy Trading</strong> is already implemented — mirrors trades across N Binance Futures accounts from a single master instance.</p>
     <div class="enh-list">
-      <div class="enh-item"><span class="enh-icon">🔄</span><span>Copy Trading</span></div>
       <div class="enh-item"><span class="enh-icon">📊</span><span>Forex, Stocks &amp; Options</span></div>
       <div class="enh-item"><span class="enh-icon">💹</span><span>MetaTrader Support</span></div>
       <div class="enh-item"><span class="enh-icon">🏦</span><span>Partnered Brokers</span></div>

@@ -36,17 +36,19 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 | Capability | Description |
 |-----------|-------------|
-| **Multi-Symbol Streaming** | Simultaneously monitors all USDT + USDC perpetual pairs via WebSocket |
-| **Concurrent Position Management** | Per-position coroutines with configurable concurrency limits |
-| **Multi-Layered Exit Logic** | Six independent exit strategies operating in priority order |
-| **Trend-Aware Trail Suppression** | 5m candle EMA(12/26) trend analysis — lets winners run further |
-| **Loss Recovery Trail** | Adaptive trail that activates beyond a configurable loss threshold |
-| **Multi-Account Copy Trading** | Master-slave trade mirroring across multiple Binance Futures accounts |
-| **Real-Time Dashboard** | Embedded web UI showing live P&L, equity curve, and positions |
+| **Multi-Symbol Streaming** | Simultaneously monitors all USDT + USDC perpetual pairs via WebSocket (~500+ pairs) |
+| **Concurrent Position Management** | Per-position coroutines with configurable 20-position concurrency limit |
+| **6-Layer Exit Logic** | Loss recovery trail → stop loss → take profit → trailing stop → time limit → RSI reversal detection, all checked every second |
+| **Candle Gate (15m EMA 12/26)** | Trend-aware trail suppression — lets winners run and losers recover when the 15m candle trend aligns with the position |
+| **Loss Recovery Trail** | Adaptive trail that activates at 3.5% loss and exits on 1.1% recovery from trough |
+| **Multi-Account Copy Trading** | Master-slave trade mirroring across N Binance Futures accounts with per-account risk scaling |
+| **Leaderboard Entry Priority** | PnL-based symbol ranking — best performers get priority for new entries |
+| **Real-Time Dashboard** | Embedded web UI showing live P&L, equity curve, lifecycle bars, and positions |
 | **State Persistence** | Full save every 20s with crash-safe JSONL — recover from any crash |
-| **Automated Operation** | Systemd integration (servers) or background process (mobile) |
-| **Symbol Blacklist** | Auto-suspension after 3 consecutive losses for 24h |
-| **Hedge Mode** | Dual-direction position support with defensive activation |
+| **Automated Operation** | Systemd integration (servers) with LimitNOFILE=65536 |
+| **Symbol Blacklist** | Auto-suspension after 3 consecutive losses for 24h (configurable) |
+| **Hedge Mode** | Dual-direction position support with candle-confirmed defensive hedge |
+| **Triple-Filter Entry** | Tick EMA 50/100 + RSI(14) + 15m kline EMA 12/26 — all three must agree |
 | **Trading Pause** | Blocks new entries 23:00–02:00 UTC — existing positions keep monitoring |
 | **Cross-Platform** | Tested on Linux, Android (Termux), iOS (iSH/Termius) |
 
@@ -56,7 +58,11 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 **Zero API polling** — The bot caches all price data from WebSocket streams. No REST API calls for monitoring. Sub-10ms price reads.
 
-**Six exit layers** — Stop loss, take profit, trailing stop (candle-enhanced), loss recovery trail, time limit, and reversal detection. Every position is checked every second.
+**Six exit layers** — Loss recovery trail, stop loss, take profit, trailing stop (candle-enhanced), time limit, and RSI reversal detection. Every position is checked every second.
+
+**Trend-aware candle gate** — The 15m EMA(12/26) trend analysis prevents premature exits. When the macro trend supports your position, trailing stops and loss trails are suppressed. When the trend flips, exits activate immediately.
+
+**Triple-filter entry** — Tick EMA 50/100 trend must agree with RSI(14) range, and both must agree with the 15m kline EMA(12/26). No signal gets through without full consensus.
 
 **Runs on anything** — VPS, laptop, or $150 Android phone. Full trading capability from a device that fits in your pocket.
 
@@ -76,7 +82,7 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 |------|---------|
 | **Python 3.13** | Core runtime |
 | **asyncio** | Async concurrency — 20+ parallel positions |
-| **Binance WebSocket Streams** | Zero-API real-time price feed |
+| **Binance WebSocket Streams** | Zero-API real-time price feed (ticker, aggTrade, depth@100ms, klines ×6 intervals) |
 | **uv** | Python package & project management |
 | **JSONL** | Crash-safe append-only state persistence |
 | **Cloudflare Tunnel** | Secure remote dashboard access |
@@ -89,11 +95,13 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 | Document | Description |
 |----------|-------------|
-| [ARCHITECTURE.md](ARCHITECTURE.md) | System design, component interactions, and data flow |
-| [FEATURES_ENHANCEMENT.md](FEATURES_ENHANCEMENT.md) | Complete feature catalog and technical capabilities |
-| [HFSCALPER_WORKFLOW.md](HFSCALPER_WORKFLOW.md) | Core trading engine workflow |
-| [LIVE_TRADING.md](LIVE_TRADING.md) | Setup, deployment, and operational guide |
-| [PERFORMANCE.md](PERFORMANCE.md) | Live trading metrics — updated automatically |
+| [README.md](README.md) | Product overview and capabilities |
+| [LIVE_TRADING.md](LIVE_TRADING.md) | Production deployment guide |
+| [FEATURES_ENHANCEMENT.md](FEATURES_ENHANCEMENT.md) | Complete feature catalog |
+| [PERFORMANCE.md](PERFORMANCE.md) | Live trading metrics |
+| [index.html](index.html) | How It Works (web page) |
+
+Full technical architecture and source documentation is available at [rebirthtrader.com](https://rebirthtrader.com).
 
 ---
 
@@ -108,6 +116,8 @@ Buy the source code, tweak every parameter, enhance it the way you want — all 
 **White Label buyers** get lifetime upgrades, dedicated support, and rebranding/reselling rights — contact for details.
 
 > **To inquire:** Open an issue on this repository or visit the [live demo website](https://rebirthtrader.com)
+
+**Limited-time source access** is available for early buyers. After the promotional window closes, the source will only be available to White Label buyers.
 
 ---
 
