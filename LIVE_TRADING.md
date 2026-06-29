@@ -78,7 +78,7 @@ Both formats are human-readable and designed to prevent data loss on unexpected 
 - API key with futures trading permissions
 - Any device with a Linux environment or CLI terminal — VPS, server, laptop, or mobile phone (tested on iOS via iSH/Termius and Android via Termux)
 - Internet connectivity
-- **Minimum VPS spec:** 1 vCPU, 2GB RAM, 10GB storage (+50GB recommended for debug logging)
+- **Minimum VPS spec:** 1 vCPU, 8GB RAM, 10GB storage (+50GB recommended for debug logging)
 
 ## Risk Management
 
