@@ -56,7 +56,7 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 ## Why This Stands Out
 
-**Zero API polling** — The bot caches all price data from WebSocket streams. No REST API calls for monitoring. Sub-10ms price reads.
+**Zero API polling** — The bot streams all price data from WebSocket feeds. No REST API calls for monitoring. Sub-10ms price reads.
 
 **Six exit layers** — Loss recovery trail, stop loss, take profit, trailing stop (candle-enhanced), time limit, and RSI reversal detection. Every position is checked every second.
 
