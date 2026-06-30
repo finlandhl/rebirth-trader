@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-06-30 06:37:33 UTC*
+*Updated: 2026-06-30 18:38:35 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $33.64 |
+| **Wallet Balance** | $35.41 |
 | **Initial Capital** | $25.46 |
-| **Realized P&L** | $5.04 |
-| **Unrealized P&L** | $3.14 |
-| **Total P&L** | $8.18 |
-| **Win Rate** | 52.9% |
-| **Closed Trades** | 70 |
-| **Wins / Losses** | 37W / 33L |
-| **Active Positions** | 21 |
-| **Avg Win** | $0.56 |
-| **Avg Loss** | $-0.37 |
-| **Total Fees** | $0.65 |
-| **Bot Uptime** | 1d 21h 55m |
+| **Realized P&L** | $10.46 |
+| **Unrealized P&L** | $-0.50 |
+| **Total P&L** | $9.95 |
+| **Win Rate** | 51.4% |
+| **Closed Trades** | 107 |
+| **Wins / Losses** | 55W / 52L |
+| **Active Positions** | 22 |
+| **Avg Win** | $0.59 |
+| **Avg Loss** | $-0.44 |
+| **Total Fees** | $1.05 |
+| **Bot Uptime** | 1h 4m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | AGLDUSDT | $1.17 | Profit Target: 6.31% gain |
-| **Worst** | 1000RATSUSDT | $-0.87 | Stop Loss: -4.19% loss |
+| **Best** | RIFUSDT | $2.67 | Profit Target: 13.11% gain |
+| **Worst** | FOLKSUSDT | $-0.91 | Stop Loss: -4.38% loss |
 
 ---
 
@@ -39,13 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Take Profit** | 24x | $16.26 |
-| **Loss Trail** | 16x | $-4.39 |
-| **Stop Loss** | 16x | $-7.55 |
-| **Trailing Stop** | 12x | $3.90 |
-| **Emergency close: 31s after ori** | 1x | $-0.43 |
-| **Emergency close: 34s after ori** | 1x | $0.39 |
-| **Total** | 70x | $8.18 |
+| **Take Profit** | 33x | $24.97 |
+| **Stop Loss** | 31x | $-16.31 |
+| **Loss Trail** | 20x | $-6.01 |
+| **Trailing Stop** | 20x | $6.57 |
+| **Emergency Close** | 3x | $0.74 |
+| **Total** | 107x | $9.95 |
 
 ## Restart History
 
