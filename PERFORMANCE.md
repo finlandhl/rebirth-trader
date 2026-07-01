@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-06-30 18:38:35 UTC*
+*Updated: 2026-07-01 06:39:37 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $35.41 |
+| **Wallet Balance** | $38.73 |
 | **Initial Capital** | $25.46 |
-| **Realized P&L** | $10.46 |
-| **Unrealized P&L** | $-0.50 |
-| **Total P&L** | $9.95 |
-| **Win Rate** | 51.4% |
-| **Closed Trades** | 107 |
-| **Wins / Losses** | 55W / 52L |
-| **Active Positions** | 22 |
-| **Avg Win** | $0.59 |
-| **Avg Loss** | $-0.44 |
-| **Total Fees** | $1.05 |
-| **Bot Uptime** | 1h 4m |
+| **Realized P&L** | $10.86 |
+| **Unrealized P&L** | $2.41 |
+| **Total P&L** | $13.27 |
+| **Win Rate** | 52.1% |
+| **Closed Trades** | 140 |
+| **Wins / Losses** | 73W / 67L |
+| **Active Positions** | 20 |
+| **Avg Win** | $0.61 |
+| **Avg Loss** | $-0.46 |
+| **Total Fees** | $1.45 |
+| **Bot Uptime** | 13h 5m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | RIFUSDT | $2.67 | Profit Target: 13.11% gain |
-| **Worst** | FOLKSUSDT | $-0.91 | Stop Loss: -4.38% loss |
+| **Worst** | RIFUSDT | $-0.95 | Stop Loss: -4.15% loss |
 
 ---
 
@@ -39,12 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Take Profit** | 33x | $24.97 |
-| **Stop Loss** | 31x | $-16.31 |
-| **Loss Trail** | 20x | $-6.01 |
-| **Trailing Stop** | 20x | $6.57 |
+| **Take Profit** | 44x | $33.91 |
+| **Stop Loss** | 39x | $-21.76 |
+| **Loss Trail** | 27x | $-8.80 |
+| **Trailing Stop** | 27x | $9.18 |
 | **Emergency Close** | 3x | $0.74 |
-| **Total** | 107x | $9.95 |
+| **Total** | 140x | $13.27 |
 
 ## Restart History
 
