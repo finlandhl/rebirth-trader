@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-02 06:40:46 UTC*
+*Updated: 2026-07-02 18:41:49 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $45.55 |
+| **Wallet Balance** | $46.59 |
 | **Initial Capital** | $25.46 |
-| **Realized P&L** | $18.03 |
-| **Unrealized P&L** | $2.06 |
-| **Total P&L** | $20.09 |
-| **Win Rate** | 51.9% |
-| **Closed Trades** | 210 |
-| **Wins / Losses** | 109W / 101L |
-| **Active Positions** | 21 |
+| **Realized P&L** | $23.55 |
+| **Unrealized P&L** | $-2.42 |
+| **Total P&L** | $21.13 |
+| **Win Rate** | 52.5% |
+| **Closed Trades** | 244 |
+| **Wins / Losses** | 128W / 116L |
+| **Active Positions** | 22 |
 | **Avg Win** | $0.66 |
-| **Avg Loss** | $-0.52 |
-| **Total Fees** | $2.38 |
-| **Bot Uptime** | 1d 13h 6m |
+| **Avg Loss** | $-0.55 |
+| **Total Fees** | $2.84 |
+| **Bot Uptime** | 4h 20m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | RIFUSDT | $2.67 | Profit Target: 13.11% gain |
-| **Worst** | TLMUSDT | $-1.42 | Stop Loss: -5.72% loss |
+| **Worst** | BIRBUSDT | $-1.81 | Stop Loss: -6.02% loss |
 
 ---
 
@@ -39,12 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Take Profit** | 68x | $55.69 |
-| **Stop Loss** | 65x | $-39.20 |
-| **Trailing Stop** | 39x | $15.55 |
-| **Loss Trail** | 35x | $-12.69 |
-| **Emergency Close** | 3x | $0.74 |
-| **Total** | 210x | $20.09 |
+| **Take Profit** | 77x | $62.15 |
+| **Stop Loss** | 75x | $-49.00 |
+| **Trailing Stop** | 49x | $21.77 |
+| **Loss Trail** | 39x | $-13.76 |
+| **Emergency Close** | 4x | $-0.04 |
+| **Total** | 244x | $21.13 |
 
 ## Restart History
 
