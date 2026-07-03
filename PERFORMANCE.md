@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-02 18:41:49 UTC*
+*Updated: 2026-07-03 06:41:52 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $46.59 |
-| **Initial Capital** | $25.46 |
-| **Realized P&L** | $23.55 |
-| **Unrealized P&L** | $-2.42 |
-| **Total P&L** | $21.13 |
-| **Win Rate** | 52.5% |
-| **Closed Trades** | 244 |
-| **Wins / Losses** | 128W / 116L |
-| **Active Positions** | 22 |
-| **Avg Win** | $0.66 |
-| **Avg Loss** | $-0.55 |
-| **Total Fees** | $2.84 |
-| **Bot Uptime** | 4h 20m |
+| **Wallet Balance** | $38.98 |
+| **Initial Capital** | $39.04 |
+| **Realized P&L** | $-0.06 |
+| **Unrealized P&L** | $0.00 |
+| **Total P&L** | $-0.06 |
+| **Win Rate** | 50.0% |
+| **Closed Trades** | 4 |
+| **Wins / Losses** | 2W / 2L |
+| **Active Positions** | 0 |
+| **Avg Win** | $0.01 |
+| **Avg Loss** | $-0.04 |
+| **Total Fees** | $0.06 |
+| **Bot Uptime** | 26m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | RIFUSDT | $2.67 | Profit Target: 13.11% gain |
-| **Worst** | BIRBUSDT | $-1.81 | Stop Loss: -6.02% loss |
+| **Best** | 1000000BOBUSDT | $0.02 | Binance Reconcile: closed on exchange |
+| **Worst** | 1000LUNCUSDT | $-0.08 | Binance Reconcile: closed on exchange |
 
 ---
 
@@ -39,12 +39,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Take Profit** | 77x | $62.15 |
-| **Stop Loss** | 75x | $-49.00 |
-| **Trailing Stop** | 49x | $21.77 |
-| **Loss Trail** | 39x | $-13.76 |
-| **Emergency Close** | 4x | $-0.04 |
-| **Total** | 244x | $21.13 |
+| **Binance Reconcile** | 4x | $-0.06 |
+| **Total** | 4x | $-0.06 |
 
 ## Restart History
 
