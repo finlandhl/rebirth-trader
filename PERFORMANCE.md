@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-05 06:44:03 UTC*
+*Updated: 2026-07-05 18:44:10 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $164.49 |
+| **Wallet Balance** | $152.35 |
 | **Initial Capital** | $180.16 |
-| **Realized P&L** | $-3.17 |
-| **Unrealized P&L** | $-12.50 |
-| **Total P&L** | $-15.67 |
-| **Win Rate** | 39.7% |
-| **Closed Trades** | 68 |
-| **Wins / Losses** | 27W / 41L |
-| **Active Positions** | 22 |
-| **Avg Win** | $2.89 |
-| **Avg Loss** | $-2.29 |
-| **Total Fees** | $3.16 |
-| **Bot Uptime** | 1d 9h 23m |
+| **Realized P&L** | $-20.10 |
+| **Unrealized P&L** | $-7.71 |
+| **Total P&L** | $-27.81 |
+| **Win Rate** | 40.6% |
+| **Closed Trades** | 101 |
+| **Wins / Losses** | 41W / 60L |
+| **Active Positions** | 21 |
+| **Avg Win** | $2.77 |
+| **Avg Loss** | $-2.35 |
+| **Total Fees** | $4.82 |
+| **Bot Uptime** | 1d 21h 23m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | 1000BONKUSDC | $7.45 | Profit Target: 5.98% gain |
-| **Worst** | ARPAUSDT | $-5.00 | Stop Loss: -3.93% loss |
+| **Worst** | 1000000MOGUSDT | $-5.78 | Stop Loss: -4.11% loss |
 
 ---
 
@@ -39,11 +39,11 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Stop Loss** | 31x | $-79.10 |
-| **Take Profit** | 17x | $67.49 |
-| **Trailing Stop** | 10x | $10.56 |
-| **Loss Trail** | 10x | $-14.62 |
-| **Total** | 68x | $-15.67 |
+| **Stop Loss** | 42x | $-110.52 |
+| **Take Profit** | 26x | $96.37 |
+| **Loss Trail** | 18x | $-30.70 |
+| **Trailing Stop** | 15x | $17.04 |
+| **Total** | 101x | $-27.81 |
 
 ## Restart History
 
