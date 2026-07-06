@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-06 06:45:12 UTC*
+*Updated: 2026-07-06 18:46:14 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $8.37 |
-| **Initial Capital** | $8.49 |
-| **Realized P&L** | $-0.06 |
-| **Unrealized P&L** | $-0.07 |
-| **Total P&L** | $-0.12 |
-| **Win Rate** | 50.0% |
-| **Closed Trades** | 4 |
-| **Wins / Losses** | 2W / 2L |
-| **Active Positions** | 18 |
-| **Avg Win** | $1.94 |
-| **Avg Loss** | $-5.65 |
-| **Total Fees** | $0.02 |
-| **Bot Uptime** | 19m |
+| **Wallet Balance** | $14.97 |
+| **Initial Capital** | $10.02 |
+| **Realized P&L** | $5.28 |
+| **Unrealized P&L** | $-0.33 |
+| **Total P&L** | $4.95 |
+| **Win Rate** | 49.1% |
+| **Closed Trades** | 116 |
+| **Wins / Losses** | 57W / 59L |
+| **Active Positions** | 20 |
+| **Avg Win** | $0.22 |
+| **Avg Loss** | $-0.13 |
+| **Total Fees** | $1.01 |
+| **Bot Uptime** | 1h 18m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | 4USDT | $3.65 | Trailing Stop: 0.14% pullback |
-| **Worst** | ALICEUSDT | $-11.12 | By Supervisor |
+| **Best** | 1000BONKUSDC | $1.00 | Profit Target: 6.00% gain |
+| **Worst** | 1000BONKUSDT | $-0.93 | Stop Loss: -4.46% loss |
 
 ---
 
@@ -39,10 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Trailing Stop** | 2x | $3.88 |
-| **Loss Trail** | 1x | $-0.17 |
-| **By Supervisor** | 1x | $-11.12 |
-| **Total** | 4x | $-7.41 |
+| **By Supervisor** | 99x | $-0.29 |
+| **Trailing Stop** | 10x | $4.70 |
+| **Loss Trail** | 3x | $-1.01 |
+| **Take Profit** | 3x | $2.26 |
+| **Stop Loss** | 1x | $-0.93 |
+| **Total** | 116x | $4.73 |
 
 ## Restart History
 
