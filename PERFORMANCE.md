@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-06 18:46:14 UTC*
+*Updated: 2026-07-07 06:47:16 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $14.97 |
+| **Wallet Balance** | $7.56 |
 | **Initial Capital** | $10.02 |
-| **Realized P&L** | $5.28 |
-| **Unrealized P&L** | $-0.33 |
-| **Total P&L** | $4.95 |
-| **Win Rate** | 49.1% |
-| **Closed Trades** | 116 |
-| **Wins / Losses** | 57W / 59L |
-| **Active Positions** | 20 |
+| **Realized P&L** | $-2.04 |
+| **Unrealized P&L** | $-0.43 |
+| **Total P&L** | $-2.47 |
+| **Win Rate** | 42.6% |
+| **Closed Trades** | 190 |
+| **Wins / Losses** | 81W / 109L |
+| **Active Positions** | 14 |
 | **Avg Win** | $0.22 |
-| **Avg Loss** | $-0.13 |
-| **Total Fees** | $1.01 |
-| **Bot Uptime** | 1h 18m |
+| **Avg Loss** | $-0.19 |
+| **Total Fees** | $1.64 |
+| **Bot Uptime** | 1h 20m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | 1000BONKUSDC | $1.00 | Profit Target: 6.00% gain |
-| **Worst** | 1000BONKUSDT | $-0.93 | Stop Loss: -4.46% loss |
+| **Best** | EDGEUSDT | $1.56 | By Supervisor |
+| **Worst** | 1000PEPEUSDC | $-1.08 | By Supervisor |
 
 ---
 
@@ -39,12 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **By Supervisor** | 99x | $-0.29 |
+| **By Supervisor** | 160x | $-2.83 |
 | **Trailing Stop** | 10x | $4.70 |
-| **Loss Trail** | 3x | $-1.01 |
+| **Stop Loss** | 9x | $-4.22 |
+| **Loss Trail** | 8x | $-2.59 |
 | **Take Profit** | 3x | $2.26 |
-| **Stop Loss** | 1x | $-0.93 |
-| **Total** | 116x | $4.73 |
+| **Total** | 190x | $-2.68 |
 
 ## Restart History
 
