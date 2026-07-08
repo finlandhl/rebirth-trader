@@ -768,26 +768,20 @@ uv run streamer.py --scalp --all --live --persist --auto --ui
   <div class="card">
     <div class="metrics-tabs">
       <button class="metrics-tab active" onclick="switchMetricsTab('patch')">Patch & Restarts</button>
-      <button class="metrics-tab" onclick="switchMetricsTab('session')">Current Session</button>
     </div>
 
     <!-- Patch & Restarts tab -->
     <div id="metricsPatch" class="metrics-panel active">
-      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.6">
-        All notable patches, fixes, and enhancements applied to the live trading bot.
-      </p>
-      <div id="patchList"></div>
-      <div class="patch-toggle" id="patchToggle" style="display:none" onclick="toggleAllPatches()">▼ Show all patches</div>
-    </div>
-
-    <!-- Current Session tab -->
-    <div id="metricsSession" class="metrics-panel">
-      <div class="empty-state" style="padding:24px;text-align:center;color:var(--text-secondary)">
-        <div style="font-size:24px;margin-bottom:8px">🟢</div>
-        <p style="font-size:13px">Session active since <strong style="color:var(--text)">2026-07-08 09:41 UTC</strong></p>
-        <p style="font-size:12px;margin-top:4px;opacity:0.6">21 active positions · +$9.19 PnL · 80% win rate</p>
+      <div class="card" style="padding:20px;margin-bottom:0">
+        <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px">Current Session</h4>
+        <p style="font-size:12px;color:var(--text-secondary);margin-bottom:14px;line-height:1.5">
+          All notable patches, fixes, and enhancements applied to the live trading bot.
+        </p>
+        <div id="patchList"></div>
+        <div class="patch-toggle" id="patchToggle" style="display:none" onclick="toggleAllPatches()">▼ Show all patches</div>
       </div>
     </div>
+
   </div>
 </section>
 
