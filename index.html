@@ -447,77 +447,6 @@
     .buy-note { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; display: inline-block; padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 18px; }
     .buy-note strong { color: var(--text); }
 
-    /* ── Metrics & Events ──────────────────────────────────────────────── */
-    .metrics-tabs {
-      display: flex;
-      gap: 0;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0;
-    }
-    .metrics-tab {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: all 0.15s;
-      font-family: inherit;
-      letter-spacing: 0.03em;
-    }
-    .metrics-tab:hover { color: var(--text); }
-    .metrics-tab.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-    .metrics-panel { display: none; }
-    .metrics-panel.active { display: block; }
-
-    /* Patch items (website) */
-    .patch-item {
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .patch-item:last-child { border-bottom: none; }
-    .patch-date {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      margin-bottom: 3px;
-      cursor: pointer;
-      user-select: none;
-    }
-    .patch-date:hover { opacity: 0.8; }
-    .patch-body { display: none; padding: 5px 0 3px 14px; }
-    .patch-body.open { display: block; }
-    .patch-item-text {
-      font-size: 12.5px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      padding: 2px 0;
-      position: relative;
-    }
-    .patch-item-text::before {
-      content: '·';
-      position: absolute;
-      left: -12px;
-      color: var(--accent);
-      opacity: 0.5;
-    }
-    .patch-toggle {
-      font-size: 12px;
-      color: var(--accent);
-      cursor: pointer;
-      margin-top: 10px;
-      opacity: 0.6;
-      user-select: none;
-    }
-    .patch-toggle:hover { opacity: 1; }
-
   </style>
 </head>
 <body>
@@ -762,30 +691,7 @@ uv run streamer.py --scalp --all --live --persist --auto --ui
   </div>
 </section>
 
-<!-- 10. Metrics & Events -->
-<section class="section reveal visible">
-  <div class="section-title"><span>10</span><h2>Metrics & <span class="accent">Events</span></h2></div>
-  <div class="card">
-    <div class="metrics-tabs">
-      <button class="metrics-tab active" onclick="switchMetricsTab('patch')">Patch & Restarts</button>
-    </div>
-
-    <!-- Patch & Restarts tab -->
-    <div id="metricsPatch" class="metrics-panel active">
-      <div class="card" style="padding:20px;margin-bottom:0">
-        <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px">Current Session</h4>
-        <p style="font-size:12px;color:var(--text-secondary);margin-bottom:14px;line-height:1.5">
-          All notable patches, fixes, and enhancements applied to the live trading bot.
-        </p>
-        <div id="patchList"></div>
-        <div class="patch-toggle" id="patchToggle" style="display:none" onclick="toggleAllPatches()">▼ Show all patches</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- 11. Buy Source -->
+<!-- 10. Buy Source -->
 <section class="section reveal visible">
   <div class="card buy-section" style="padding:32px">
     <h3 class="buy-title">Get the Source</h3>
@@ -869,102 +775,6 @@ async function updateBuyPrice() {
 }
 updateBuyPrice();
 setInterval(updateBuyPrice, 30000);
-
-// ── Metrics & Events ──────────────────────────────────────────────────────
-var _patchExpanded = false;
-
-// Changelog data (from gitdocs/CHANGELOG.md)
-var _changelogEntries = [
-  {date: '2026-07-08', items: [
-    'Sentinel profile enhanced — 18 new runtime fields added to UserProfile: long/short ratio, average confidence, hedge status, positions in red/green, consecutive loss streak, drawdown %, active symbol count, total trades, win rate, avg PnL per trade. Profile now gives the LLM a richer picture of bot state during decision scans.',
-    'History.jsonl enriched — event: position_closed, side, entry_time, clean exit_reason (no more raw str(namedtuple)), and logic_name fields added. Entries are now filterable and machine-readable.',
-    'Renamed max_concurrent_positions → max_concurrent_symbols — 73 references across hfscalper.py and profile.py updated. Name now accurately reflects that the limit is per-symbol (hedge pairs excluded).',
-    'Ghost detection interval reduced — first check 3 min, subsequent every 5 min (was 30s/120s). Fixes reconcile rate-limit errors that were flooding logs.',
-  ]},
-  {date: '2026-07-07', items: [
-    'Dashboard uPnL sync fixed — Three bugs patched in server.py: equity chart was mixing ratio values with dollar amounts, summary header was summing ratios instead of USDT, and per-position PnL preferred theoretical coin_position over actual executed_quantity. All positions now show correct PnL regardless of leverage.',
-    'Hedge pair PnL fix — Hedge calculation in check_exits_and_monitor_positions now uses executed_quantity (actual filled size) instead of coin_position (theoretical). No more PnL skips on hedges.',
-    'Self-healing entry guard deployed — _pending_entries Dict with 30s TTL prevents duplicate order races. A symbol entering the flow is tracked by timestamp; expired entries are cleaned on access. Two entry paths guarded (stream data + leaderboard processor).',
-    'Duplicate orders root cause fixed — Master account credentials were accidentally listed in users.json under the multi-account executor, causing the bot to submit every order twice (once via main path, once via multi-acc path). users.json cleared.',
-    'Lifecycle color system redesigned — 7-state scheme (0=green/entry, 1=red/initial, 2=yellow/recovering, 3=orange/loss-trail, 4=dark-green/near-TP, 5=dark-red/near-SL, 6=blue/trail-active) with time-progress tracking.',
-    'Dashboard lifecycle bar freeze fixed — Bar was using lc[-1].t (last lifecycle timestamp) instead of current time. Changed to Date.now() - entry_ms so bar always reflects real elapsed time.',
-    'Max concurrent symbols increased 5 → 20 — Single line change at self.max_concurrent_symbols = 20 (was 5). Enables scaling to full portfolio.',
-  ]},
-  {date: '2026-07-06', items: [
-    'Position lifecycle color system implemented — 6-state scheme tracking entry, red, yellow, orange, dark-green, dark-blue phases. Colors reflect real-time position health.',
-    'TimeLimitExit rebuilt — max_holding_minutes made required in Position dataclass; single source of truth at HFScalper.max_holding_minutes. No more hardcoded defaults.',
-  ]},
-  {date: '2026-07-05', items: [
-    'Dashboard equity chart live data — Continuous equity tracking from bot start; chart now shows wallet + unrealized PnL progression.',
-  ]},
-  {date: '2026-07-04', items: [
-    'Multi-account executor initial integration — users.json schema, copier-only accounts, master account excluded.',
-  ]},
-  {date: '2026-07-03', items: [
-    'Entry confidence calibration deployed — 3×3 decision matrix (TREND × VOLUME). Strong+Strong → HIGH confidence, Weak+Weak → INVALID. Natural separation via tanh + conviction scoring.',
-  ]},
-];
-
-function switchMetricsTab(tab) {
-  document.querySelectorAll('.metrics-tab').forEach(function(t) { t.classList.remove('active'); });
-  document.querySelectorAll('.metrics-panel').forEach(function(p) { p.classList.remove('active'); });
-  event.target.classList.add('active');
-  document.getElementById('metrics' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
-}
-
-function renderPatches() {
-  var el = document.getElementById('patchList');
-  if (!el) return;
-  var entries = _changelogEntries;
-  if (!entries || entries.length === 0) {
-    el.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-secondary);font-size:13px">No patches yet.</div>';
-    return;
-  }
-
-  var html = '';
-  for (var i = 0; i < entries.length; i++) {
-    var e = entries[i];
-    var isFirst = (i === 0);
-    html += '<div class="patch-item">';
-    html += '<div class="patch-date" onclick="togglePatchDate(this)">' +
-            (isFirst ? '▶ ' : '▶ ') + e.date + ' <span style="font-weight:400;opacity:0.5">(' + e.items.length + ')</span></div>';
-    html += '<div class="patch-body' + (isFirst ? ' open' : '') + '">';
-    for (var j = 0; j < e.items.length; j++) {
-      html += '<div class="patch-item-text">' + e.items[j] + '</div>';
-    }
-    html += '</div></div>';
-  }
-  el.innerHTML = html;
-
-  var toggle = document.getElementById('patchToggle');
-  if (entries.length > 1) {
-    toggle.style.display = 'block';
-    toggle.textContent = '▼ Show all patches';
-    _patchExpanded = false;
-  } else {
-    toggle.style.display = 'none';
-  }
-}
-
-function togglePatchDate(el) {
-  var body = el.nextElementSibling;
-  if (!body) return;
-  body.classList.toggle('open');
-  el.textContent = body.classList.contains('open') ? '▶ ' : '▶ ' +
-    el.textContent.replace(/^[▶▲]\s*/, '');
-}
-
-function toggleAllPatches() {
-  _patchExpanded = !_patchExpanded;
-  var allBodies = document.querySelectorAll('#patchList .patch-body');
-  for (var i = 0; i < allBodies.length; i++) {
-    allBodies[i].classList.toggle('open', _patchExpanded);
-  }
-  var toggle = document.getElementById('patchToggle');
-  toggle.textContent = _patchExpanded ? '▲ Show less' : '▼ Show all patches';
-}
-
-renderPatches();
 </script>
 </body>
 </html>
