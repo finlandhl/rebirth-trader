@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-07 06:47:16 UTC*
+*Updated: 2026-07-08 06:48:33 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $7.56 |
-| **Initial Capital** | $10.02 |
-| **Realized P&L** | $-2.04 |
-| **Unrealized P&L** | $-0.43 |
-| **Total P&L** | $-2.47 |
-| **Win Rate** | 42.6% |
-| **Closed Trades** | 190 |
-| **Wins / Losses** | 81W / 109L |
-| **Active Positions** | 14 |
-| **Avg Win** | $0.22 |
-| **Avg Loss** | $-0.19 |
-| **Total Fees** | $1.64 |
-| **Bot Uptime** | 1h 20m |
+| **Wallet Balance** | $17.56 |
+| **Initial Capital** | $9.71 |
+| **Realized P&L** | $7.72 |
+| **Unrealized P&L** | $0.13 |
+| **Total P&L** | $7.85 |
+| **Win Rate** | 84.6% |
+| **Closed Trades** | 39 |
+| **Wins / Losses** | 33W / 6L |
+| **Active Positions** | 21 |
+| **Avg Win** | $0.28 |
+| **Avg Loss** | $-0.11 |
+| **Total Fees** | $0.47 |
+| **Bot Uptime** | 5h 59m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | EDGEUSDT | $1.56 | By Supervisor |
-| **Worst** | 1000PEPEUSDC | $-1.08 | By Supervisor |
+| **Best** | 0GUSDT | $0.99 | By Supervisor |
+| **Worst** | EDGEUSDT | $-0.30 | Loss Trail: 2.71% loss |
 
 ---
 
@@ -39,12 +39,10 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **By Supervisor** | 160x | $-2.83 |
-| **Trailing Stop** | 10x | $4.70 |
-| **Stop Loss** | 9x | $-4.22 |
-| **Loss Trail** | 8x | $-2.59 |
-| **Take Profit** | 3x | $2.26 |
-| **Total** | 190x | $-2.68 |
+| **By Supervisor** | 36x | $8.08 |
+| **Take Profit** | 2x | $0.71 |
+| **Loss Trail** | 1x | $-0.30 |
+| **Total** | 39x | $8.49 |
 
 ## Restart History
 
