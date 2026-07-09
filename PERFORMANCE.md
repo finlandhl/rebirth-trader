@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-08 06:48:33 UTC*
+*Updated: 2026-07-09 06:49:05 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $17.56 |
-| **Initial Capital** | $9.71 |
-| **Realized P&L** | $7.72 |
-| **Unrealized P&L** | $0.13 |
-| **Total P&L** | $7.85 |
-| **Win Rate** | 84.6% |
-| **Closed Trades** | 39 |
-| **Wins / Losses** | 33W / 6L |
-| **Active Positions** | 21 |
-| **Avg Win** | $0.28 |
-| **Avg Loss** | $-0.11 |
-| **Total Fees** | $0.47 |
-| **Bot Uptime** | 5h 59m |
+| **Wallet Balance** | $26.07 |
+| **Initial Capital** | $26.56 |
+| **Realized P&L** | $2.90 |
+| **Unrealized P&L** | $-3.39 |
+| **Total P&L** | $-0.49 |
+| **Win Rate** | 95.0% |
+| **Closed Trades** | 20 |
+| **Wins / Losses** | 19W / 1L |
+| **Active Positions** | 46 |
+| **Avg Win** | $0.23 |
+| **Avg Loss** | $-1.00 |
+| **Total Fees** | $0.32 |
+| **Bot Uptime** | 7h 32m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | 0GUSDT | $0.99 | By Supervisor |
-| **Worst** | EDGEUSDT | $-0.30 | Loss Trail: 2.71% loss |
+| **Best** | LITUSDT | $0.72 | By Supervisor |
+| **Worst** | PENDLEUSDT | $-1.00 | Stop Loss: -4.11% loss |
 
 ---
 
@@ -39,10 +39,10 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **By Supervisor** | 36x | $8.08 |
-| **Take Profit** | 2x | $0.71 |
-| **Loss Trail** | 1x | $-0.30 |
-| **Total** | 39x | $8.49 |
+| **By Supervisor** | 17x | $3.85 |
+| **Trailing Stop** | 2x | $0.46 |
+| **Stop Loss** | 1x | $-1.00 |
+| **Total** | 20x | $3.31 |
 
 ## Restart History
 
