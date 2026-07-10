@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-09 18:49:15 UTC*
+*Updated: 2026-07-10 06:49:19 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $22.50 |
+| **Wallet Balance** | $23.39 |
 | **Initial Capital** | $26.56 |
-| **Realized P&L** | $-1.16 |
-| **Unrealized P&L** | $-2.90 |
-| **Total P&L** | $-4.06 |
-| **Win Rate** | 62.5% |
-| **Closed Trades** | 64 |
-| **Wins / Losses** | 40W / 24L |
-| **Active Positions** | 44 |
+| **Realized P&L** | $-1.14 |
+| **Unrealized P&L** | $-2.03 |
+| **Total P&L** | $-3.17 |
+| **Win Rate** | 60.7% |
+| **Closed Trades** | 84 |
+| **Wins / Losses** | 51W / 33L |
+| **Active Positions** | 38 |
 | **Avg Win** | $0.25 |
-| **Avg Loss** | $-0.39 |
-| **Total Fees** | $0.78 |
-| **Bot Uptime** | 47m |
+| **Avg Loss** | $-0.35 |
+| **Total Fees** | $0.95 |
+| **Bot Uptime** | 7h 15m |
 
 ---
 
@@ -30,7 +30,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | LITUSDT | $0.72 | By Supervisor |
+| **Best** | SKLUSDT | $0.74 | Profit Target: 6.16% gain |
 | **Worst** | PENDLEUSDT | $-1.00 | Stop Loss: -4.11% loss |
 
 ---
@@ -39,11 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **By Supervisor** | 34x | $6.65 |
-| **Stop Loss** | 14x | $-5.97 |
-| **Trailing Stop** | 10x | $1.80 |
-| **Loss Trail** | 6x | $-2.08 |
-| **Total** | 64x | $0.40 |
+| **By Supervisor** | 43x | $7.95 |
+| **Stop Loss** | 19x | $-7.77 |
+| **Trailing Stop** | 12x | $2.44 |
+| **Loss Trail** | 8x | $-2.38 |
+| **Take Profit** | 2x | $1.06 |
+| **Total** | 84x | $1.29 |
 
 ## Restart History
 
