@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-07-11 06:49:32 UTC*
+*Updated: 2026-07-11 18:49:52 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $22.45 |
-| **Initial Capital** | $22.24 |
-| **Realized P&L** | $5.83 |
-| **Unrealized P&L** | $-5.61 |
-| **Total P&L** | $0.21 |
-| **Win Rate** | 47.1% |
-| **Closed Trades** | 17 |
-| **Wins / Losses** | 8W / 9L |
-| **Active Positions** | 30 |
-| **Avg Win** | $0.66 |
-| **Avg Loss** | $-0.56 |
-| **Total Fees** | $0.19 |
-| **Bot Uptime** | 6h 2m |
+| **Wallet Balance** | $23.45 |
+| **Initial Capital** | $23.57 |
+| **Realized P&L** | $0.86 |
+| **Unrealized P&L** | $-0.98 |
+| **Total P&L** | $-0.12 |
+| **Win Rate** | 51.2% |
+| **Closed Trades** | 43 |
+| **Wins / Losses** | 22W / 21L |
+| **Active Positions** | 19 |
+| **Avg Win** | $0.19 |
+| **Avg Loss** | $-0.21 |
+| **Total Fees** | $0.46 |
+| **Bot Uptime** | 14m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | AIOUSDT | $1.61 | Profit Target: 7.21% gain |
-| **Worst** | KATUSDT | $-0.78 | Stop Loss: -4.05% loss |
+| **Best** | 1MBABYDOGEUSDT | $0.97 | By Supervisor |
+| **Worst** | ANKRUSDT | $-0.54 | Loss Trail: 1.72% loss |
 
 ---
 
@@ -39,11 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Stop Loss** | 7x | $-4.08 |
-| **Take Profit** | 5x | $3.84 |
-| **Trailing Stop** | 3x | $1.43 |
-| **Loss Trail** | 2x | $-0.97 |
-| **Total** | 17x | $0.21 |
+| **By Supervisor** | 22x | $1.11 |
+| **Loss Trail** | 10x | $-2.53 |
+| **Trailing Stop** | 7x | $1.90 |
+| **Stop Loss** | 3x | $-0.91 |
+| **Take Profit** | 1x | $0.31 |
+| **Total** | 43x | $-0.12 |
 
 ## Restart History
 
