@@ -14,14 +14,15 @@ users.json
 /rebirth-trader.sh
 /.claude/
 
-# Internal documentation — NOT for public GitHub
-/docs/
-
-# Generated state / logs
-/logs/
-/reports/
+# Generated cache
 /tmp/gen_stats_cache.json
 /tmp/gen_stats_offset.json
+
+# Runtime state — never commit (append-only, grows 10MB+/h)
+/logs/*
+
+# Nested git repos (standalone marketing repo — managed separately)
+/gitdocs/
 
 # Python
 __pycache__/

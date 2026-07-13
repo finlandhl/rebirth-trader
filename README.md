@@ -56,7 +56,7 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 ## Why This Stands Out
 
-**Zero API polling** — The bot streams all price data from WebSocket feeds. No REST API calls for monitoring. Sub-10ms price reads.
+**Zero API polling** — The bot caches all price data from WebSocket streams. No REST API calls for monitoring. Sub-10ms price reads.
 
 **Six exit layers** — Loss recovery trail, stop loss, take profit, trailing stop (candle-enhanced), time limit, and RSI reversal detection. Every position is checked every second.
 
@@ -95,13 +95,11 @@ From a mobile phone, open the URL in Chrome or Safari. The dashboard is fully re
 
 | Document | Description |
 |----------|-------------|
-| [README.md](README.md) | Product overview and capabilities |
+| [docs/README.md](docs/README.md) | Complete system architecture, CLI flags, risk params, exit logic, and operations |
+| [docs/live_trading_downloaded.md](docs/live_trading_downloaded.md) | Setup, deployment, and operational guide |
+| [FEATURES_ENHANCEMENT.md](FEATURES_ENHANCEMENT.md) | Complete feature catalog and technical capabilities |
 | [LIVE_TRADING.md](LIVE_TRADING.md) | Production deployment guide |
-| [FEATURES_ENHANCEMENT.md](FEATURES_ENHANCEMENT.md) | Complete feature catalog |
-| [PERFORMANCE.md](PERFORMANCE.md) | Live trading metrics |
-| [index.html](index.html) | How It Works (web page) |
-
-Full technical architecture and source documentation is available at [rebirthtrader.com](https://rebirthtrader.com).
+| [PERFORMANCE.md](PERFORMANCE.md) | Live trading metrics — updated automatically |
 
 ---
 
