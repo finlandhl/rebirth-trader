@@ -10,7 +10,12 @@
 ![WebSocket](https://img.shields.io/badge/WebSocket-streaming-4B89DC)
 ![uv](https://img.shields.io/badge/uv-package%20manager-FFD43B)
 ![JSONL](https://img.shields.io/badge/JSONL-persistence-2EA44F)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-tunnel-F38020)
+[![Cloudflare](https://img.shields.io/badge/Cloudflare-tunnel-F38020)]
+
+[![Live PnL](https://rebirthtrader.com/badges/pnl.svg)](https://rebirthtrader.com/dashboard/)
+[![Win Rate](https://rebirthtrader.com/badges/winrate.svg)](https://rebirthtrader.com/dashboard/)
+[![Trades](https://rebirthtrader.com/badges/trades.svg)](https://rebirthtrader.com/dashboard/)
+[![Uptime](https://rebirthtrader.com/badges/uptime.svg)](https://rebirthtrader.com/dashboard/)
 
 > At its core, a **scalping bot** — designed to enter and exit trades fast, accumulating small wins across hundreds of markets. The same engine can be used for **day trading** as well, holding positions across larger timeframes. The exit system, the monitoring, the risk management — it all scales from minutes to hours.
 
