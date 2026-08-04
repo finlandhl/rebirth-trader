@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-04 08:56:26 UTC*
+*Updated: 2026-08-04 20:56:40 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $5.65 |
-| **Initial Capital** | $10.49 |
-| **Realized P&L** | $-4.77 |
-| **Unrealized P&L** | $-0.08 |
-| **Total P&L** | $-4.85 |
-| **Win Rate** | 41.9% |
-| **Closed Trades** | 155 |
-| **Wins / Losses** | 65W / 90L |
-| **Active Positions** | 6 |
-| **Avg Win** | $0.19 |
-| **Avg Loss** | $-0.17 |
-| **Total Fees** | $1.23 |
-| **Bot Uptime** | 8h 48m |
+| **Wallet Balance** | $6.38 |
+| **Initial Capital** | $6.00 |
+| **Realized P&L** | $0.11 |
+| **Unrealized P&L** | $0.28 |
+| **Total P&L** | $0.39 |
+| **Win Rate** | 66.7% |
+| **Closed Trades** | 3 |
+| **Wins / Losses** | 2W / 1L |
+| **Active Positions** | 9 |
+| **Avg Win** | $0.25 |
+| **Avg Loss** | $-0.11 |
+| **Total Fees** | $0.02 |
+| **Bot Uptime** | 5h 4m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | AIOUSDT | $0.43 | Emergency close: 34s after original exit |
-| **Worst** | IDOLUSDT | $-0.98 | Stop Loss: -9.98% loss |
+| **Best** | BOMEUSDT | $0.27 | Profit Trail: 0.12% pullback |
+| **Worst** | BASEDUSDT | $-0.11 | Loss Trail: 1.08% loss |
 
 ---
 
@@ -39,13 +39,9 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 60x | $-1.70 |
-| **Trailing Stop** | 36x | $9.09 |
-| **Stop Loss** | 22x | $-8.10 |
-| **Loss Trail** | 22x | $-2.75 |
-| **By Supervisor** | 12x | $0.38 |
-| **Emergency Close** | 3x | $-0.01 |
-| **Total** | 155x | $-3.09 |
+| **Trailing Stop** | 2x | $0.50 |
+| **Loss Trail** | 1x | $-0.11 |
+| **Total** | 3x | $0.39 |
 
 ## Restart History
 
