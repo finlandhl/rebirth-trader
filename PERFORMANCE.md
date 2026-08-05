@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-05 08:56:49 UTC*
+*Updated: 2026-08-05 20:56:57 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $6.22 |
+| **Wallet Balance** | $7.08 |
 | **Initial Capital** | $6.00 |
-| **Realized P&L** | $0.11 |
-| **Unrealized P&L** | $0.11 |
-| **Total P&L** | $0.22 |
-| **Win Rate** | 58.1% |
-| **Closed Trades** | 31 |
-| **Wins / Losses** | 18W / 13L |
-| **Active Positions** | 6 |
-| **Avg Win** | $0.12 |
-| **Avg Loss** | $-0.15 |
-| **Total Fees** | $0.25 |
-| **Bot Uptime** | 1h 41m |
+| **Realized P&L** | $1.13 |
+| **Unrealized P&L** | $-0.04 |
+| **Total P&L** | $1.09 |
+| **Win Rate** | 56.0% |
+| **Closed Trades** | 50 |
+| **Wins / Losses** | 28W / 22L |
+| **Active Positions** | 1 |
+| **Avg Win** | $0.15 |
+| **Avg Loss** | $-0.14 |
+| **Total Fees** | $0.40 |
+| **Bot Uptime** | 13h 42m |
 
 ---
 
@@ -30,7 +30,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | PTBUSDT | $0.34 | Profit Trail: 0.11% pullback |
+| **Best** | PTBUSDT | $0.76 | Profit Trail: 1.18% pullback |
 | **Worst** | BIRBUSDT | $-0.35 | Stop Loss: -3.63% loss |
 
 ---
@@ -39,11 +39,11 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 20x | $0.09 |
-| **Trailing Stop** | 6x | $1.51 |
-| **Stop Loss** | 4x | $-1.26 |
+| **Time Limit** | 32x | $0.31 |
+| **Trailing Stop** | 10x | $3.06 |
+| **Stop Loss** | 7x | $-2.17 |
 | **Loss Trail** | 1x | $-0.11 |
-| **Total** | 31x | $0.22 |
+| **Total** | 50x | $1.09 |
 
 ## Restart History
 
