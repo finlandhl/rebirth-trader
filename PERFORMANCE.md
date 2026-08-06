@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-06 08:57:10 UTC*
+*Updated: 2026-08-06 20:57:18 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $8.06 |
+| **Wallet Balance** | $6.45 |
 | **Initial Capital** | $6.00 |
-| **Realized P&L** | $2.18 |
-| **Unrealized P&L** | $-0.11 |
-| **Total P&L** | $2.06 |
-| **Win Rate** | 54.3% |
-| **Closed Trades** | 70 |
-| **Wins / Losses** | 38W / 32L |
-| **Active Positions** | 6 |
-| **Avg Win** | $0.18 |
-| **Avg Loss** | $-0.14 |
-| **Total Fees** | $0.56 |
-| **Bot Uptime** | 1h 46m |
+| **Realized P&L** | $0.26 |
+| **Unrealized P&L** | $0.19 |
+| **Total P&L** | $0.46 |
+| **Win Rate** | 54.1% |
+| **Closed Trades** | 85 |
+| **Wins / Losses** | 46W / 39L |
+| **Active Positions** | 4 |
+| **Avg Win** | $0.17 |
+| **Avg Loss** | $-0.16 |
+| **Total Fees** | $0.68 |
+| **Bot Uptime** | 37m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | PTBUSDT | $0.76 | Profit Trail: 1.18% pullback |
-| **Worst** | BIRBUSDT | $-0.35 | Stop Loss: -3.63% loss |
+| **Worst** | AGTUSDT | $-0.62 | force_removed_zombie |
 
 ---
 
@@ -39,13 +39,13 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 38x | $0.22 |
-| **Trailing Stop** | 16x | $4.40 |
-| **Stop Loss** | 10x | $-3.06 |
+| **Time Limit** | 48x | $0.38 |
+| **Profit Trail** | 18x | $4.86 |
+| **Stop Loss** | 11x | $-3.63 |
 | **Loss Trail** | 4x | $-0.46 |
-| **By Supervisor** | 1x | $0.28 |
+| **By Supervisor** | 3x | $-0.18 |
 | **Take Profit** | 1x | $0.69 |
-| **Total** | 70x | $2.06 |
+| **Total** | 85x | $1.66 |
 
 ## Restart History
 
