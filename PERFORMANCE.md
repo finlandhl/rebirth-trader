@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-06 20:57:18 UTC*
+*Updated: 2026-08-07 08:57:24 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $6.45 |
-| **Initial Capital** | $6.00 |
-| **Realized P&L** | $0.26 |
-| **Unrealized P&L** | $0.19 |
-| **Total P&L** | $0.46 |
-| **Win Rate** | 54.1% |
-| **Closed Trades** | 85 |
-| **Wins / Losses** | 46W / 39L |
-| **Active Positions** | 4 |
-| **Avg Win** | $0.17 |
-| **Avg Loss** | $-0.16 |
-| **Total Fees** | $0.68 |
-| **Bot Uptime** | 37m |
+| **Wallet Balance** | $6.71 |
+| **Initial Capital** | $7.02 |
+| **Realized P&L** | $-0.36 |
+| **Unrealized P&L** | $0.06 |
+| **Total P&L** | $-0.31 |
+| **Win Rate** | 57.1% |
+| **Closed Trades** | 7 |
+| **Wins / Losses** | 4W / 3L |
+| **Active Positions** | 6 |
+| **Avg Win** | $0.08 |
+| **Avg Loss** | $-0.21 |
+| **Total Fees** | $0.06 |
+| **Bot Uptime** | 5h 36m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | PTBUSDT | $0.76 | Profit Trail: 1.18% pullback |
-| **Worst** | AGTUSDT | $-0.62 | force_removed_zombie |
+| **Best** | ANIMEUSDT | $0.14 | Time Limit: 300min exceeded |
+| **Worst** | HEIUSDT | $-0.33 | Stop Loss: -3.23% loss |
 
 ---
 
@@ -39,13 +39,10 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 48x | $0.38 |
-| **Profit Trail** | 18x | $4.86 |
-| **Stop Loss** | 11x | $-3.63 |
-| **Loss Trail** | 4x | $-0.46 |
-| **By Supervisor** | 3x | $-0.18 |
-| **Take Profit** | 1x | $0.69 |
-| **Total** | 85x | $1.66 |
+| **Time Limit** | 4x | $0.32 |
+| **Loss Trail** | 2x | $-0.29 |
+| **Stop Loss** | 1x | $-0.33 |
+| **Total** | 7x | $-0.31 |
 
 ## Restart History
 
