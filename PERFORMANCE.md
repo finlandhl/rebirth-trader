@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-10 08:59:31 UTC*
+*Updated: 2026-08-10 20:59:41 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $10.78 |
+| **Wallet Balance** | $10.51 |
 | **Initial Capital** | $7.02 |
-| **Realized P&L** | $3.70 |
-| **Unrealized P&L** | $0.06 |
-| **Total P&L** | $3.77 |
-| **Win Rate** | 54.7% |
-| **Closed Trades** | 139 |
-| **Wins / Losses** | 76W / 63L |
-| **Active Positions** | 10 |
-| **Avg Win** | $0.17 |
-| **Avg Loss** | $-0.14 |
-| **Total Fees** | $1.11 |
-| **Bot Uptime** | 9h 15m |
+| **Realized P&L** | $3.20 |
+| **Unrealized P&L** | $0.29 |
+| **Total P&L** | $3.49 |
+| **Win Rate** | 51.4% |
+| **Closed Trades** | 177 |
+| **Wins / Losses** | 91W / 86L |
+| **Active Positions** | 8 |
+| **Avg Win** | $0.16 |
+| **Avg Loss** | $-0.13 |
+| **Total Fees** | $1.42 |
+| **Bot Uptime** | 3h 9m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | HOMEUSDT | $0.34 | Profit Trail: 0.16% pullback |
-| **Worst** | ETHFIUSDT | $-0.36 | Stop Loss: -3.38% loss |
+| **Worst** | C98USDT | $-0.37 | Stop Loss: -3.64% loss |
 
 ---
 
@@ -39,13 +39,13 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 61x | $0.04 |
-| **Profit Trail** | 42x | $10.01 |
-| **Loss Trail** | 22x | $-2.89 |
-| **Stop Loss** | 11x | $-3.40 |
+| **Time Limit** | 80x | $-0.48 |
+| **Profit Trail** | 51x | $12.01 |
+| **Loss Trail** | 30x | $-3.96 |
+| **Stop Loss** | 13x | $-4.09 |
 | **Emergency Close** | 2x | $0.07 |
 | **By Supervisor** | 1x | $-0.05 |
-| **Total** | 139x | $3.77 |
+| **Total** | 177x | $3.49 |
 
 ## Restart History
 
