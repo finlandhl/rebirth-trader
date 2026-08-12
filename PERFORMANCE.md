@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-12 09:00:04 UTC*
+*Updated: 2026-08-12 21:00:12 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $8.39 |
+| **Wallet Balance** | $9.22 |
 | **Initial Capital** | $9.32 |
-| **Realized P&L** | $-0.84 |
-| **Unrealized P&L** | $-0.09 |
-| **Total P&L** | $-0.93 |
-| **Win Rate** | 0.0% |
-| **Closed Trades** | 3 |
-| **Wins / Losses** | 0W / 3L |
+| **Realized P&L** | $-0.27 |
+| **Unrealized P&L** | $0.16 |
+| **Total P&L** | $-0.10 |
+| **Win Rate** | 46.2% |
+| **Closed Trades** | 26 |
+| **Wins / Losses** | 12W / 14L |
 | **Active Positions** | 6 |
-| **Avg Win** | $0.00 |
-| **Avg Loss** | $-0.31 |
-| **Total Fees** | $0.02 |
-| **Bot Uptime** | 2h 11m |
+| **Avg Win** | $0.18 |
+| **Avg Loss** | $-0.16 |
+| **Total Fees** | $0.21 |
+| **Bot Uptime** | 14h 11m |
 
 ---
 
@@ -30,7 +30,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | BROCCOLI714USDT | $-0.28 | Stop Loss: -2.94% loss |
+| **Best** | INXUSDT | $0.27 | Profit Trail: 0.16% pullback |
 | **Worst** | COOKIEUSDT | $-0.33 | Stop Loss: -3.10% loss |
 
 ---
@@ -39,8 +39,11 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
+| **Time Limit** | 10x | $-0.42 |
+| **Profit Trail** | 8x | $1.80 |
+| **Loss Trail** | 5x | $-0.55 |
 | **Stop Loss** | 3x | $-0.93 |
-| **Total** | 3x | $-0.93 |
+| **Total** | 26x | $-0.10 |
 
 ## Restart History
 
