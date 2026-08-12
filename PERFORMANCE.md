@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-11 20:59:55 UTC*
+*Updated: 2026-08-12 09:00:04 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $11.07 |
-| **Initial Capital** | $7.02 |
-| **Realized P&L** | $3.85 |
-| **Unrealized P&L** | $0.20 |
-| **Total P&L** | $4.05 |
-| **Win Rate** | 48.5% |
-| **Closed Trades** | 239 |
-| **Wins / Losses** | 116W / 123L |
-| **Active Positions** | 7 |
-| **Avg Win** | $0.17 |
-| **Avg Loss** | $-0.13 |
-| **Total Fees** | $1.91 |
-| **Bot Uptime** | 4h 55m |
+| **Wallet Balance** | $8.39 |
+| **Initial Capital** | $9.32 |
+| **Realized P&L** | $-0.84 |
+| **Unrealized P&L** | $-0.09 |
+| **Total P&L** | $-0.93 |
+| **Win Rate** | 0.0% |
+| **Closed Trades** | 3 |
+| **Wins / Losses** | 0W / 3L |
+| **Active Positions** | 6 |
+| **Avg Win** | $0.00 |
+| **Avg Loss** | $-0.31 |
+| **Total Fees** | $0.02 |
+| **Bot Uptime** | 2h 11m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | IOTXUSDT | $0.40 | Profit Trail: 0.52% pullback |
-| **Worst** | C98USDT | $-0.37 | Stop Loss: -3.64% loss |
+| **Best** | BROCCOLI714USDT | $-0.28 | Stop Loss: -2.94% loss |
+| **Worst** | COOKIEUSDT | $-0.33 | Stop Loss: -3.10% loss |
 
 ---
 
@@ -39,13 +39,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 109x | $-1.97 |
-| **Profit Trail** | 69x | $16.54 |
-| **Loss Trail** | 41x | $-5.42 |
-| **Stop Loss** | 16x | $-4.99 |
-| **Emergency Close** | 2x | $0.07 |
-| **By Supervisor** | 2x | $-0.19 |
-| **Total** | 239x | $4.05 |
+| **Stop Loss** | 3x | $-0.93 |
+| **Total** | 3x | $-0.93 |
 
 ## Restart History
 
