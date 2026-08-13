@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-13 09:00:19 UTC*
+*Updated: 2026-08-13 21:00:27 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $9.33 |
+| **Wallet Balance** | $7.83 |
 | **Initial Capital** | $9.32 |
-| **Realized P&L** | $-0.00 |
-| **Unrealized P&L** | $0.00 |
-| **Total P&L** | $0.00 |
-| **Win Rate** | 51.0% |
-| **Closed Trades** | 49 |
-| **Wins / Losses** | 25W / 24L |
-| **Active Positions** | 7 |
-| **Avg Win** | $0.14 |
-| **Avg Loss** | $-0.15 |
-| **Total Fees** | $0.39 |
-| **Bot Uptime** | 1d 2h 11m |
+| **Realized P&L** | $-1.48 |
+| **Unrealized P&L** | $-0.01 |
+| **Total P&L** | $-1.49 |
+| **Win Rate** | 46.4% |
+| **Closed Trades** | 69 |
+| **Wins / Losses** | 32W / 37L |
+| **Active Positions** | 5 |
+| **Avg Win** | $0.15 |
+| **Avg Loss** | $-0.17 |
+| **Total Fees** | $0.55 |
+| **Bot Uptime** | 19m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | INXUSDT | $0.27 | Profit Trail: 0.16% pullback |
-| **Worst** | COOKIEUSDT | $-0.33 | Stop Loss: -3.10% loss |
+| **Worst** | ARIAUSDT | $-0.48 | Stop Loss: -4.86% loss |
 
 ---
 
@@ -39,11 +39,11 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 26x | $-0.31 |
-| **Profit Trail** | 11x | $2.50 |
-| **Loss Trail** | 8x | $-0.93 |
-| **Stop Loss** | 4x | $-1.25 |
-| **Total** | 49x | $0.00 |
+| **Time Limit** | 34x | $-0.46 |
+| **Profit Trail** | 15x | $3.40 |
+| **Stop Loss** | 10x | $-3.28 |
+| **Loss Trail** | 10x | $-1.16 |
+| **Total** | 69x | $-1.49 |
 
 ## Restart History
 
