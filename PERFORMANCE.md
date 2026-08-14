@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-14 09:00:35 UTC*
+*Updated: 2026-08-14 21:00:44 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $8.18 |
+| **Wallet Balance** | $5.76 |
 | **Initial Capital** | $9.32 |
-| **Realized P&L** | $-1.23 |
-| **Unrealized P&L** | $0.09 |
-| **Total P&L** | $-1.14 |
-| **Win Rate** | 45.7% |
-| **Closed Trades** | 92 |
-| **Wins / Losses** | 42W / 50L |
-| **Active Positions** | 6 |
+| **Realized P&L** | $-3.54 |
+| **Unrealized P&L** | $-0.03 |
+| **Total P&L** | $-3.57 |
+| **Win Rate** | 41.3% |
+| **Closed Trades** | 109 |
+| **Wins / Losses** | 45W / 64L |
+| **Active Positions** | 4 |
 | **Avg Win** | $0.15 |
-| **Avg Loss** | $-0.15 |
-| **Total Fees** | $0.74 |
-| **Bot Uptime** | 12h 19m |
+| **Avg Loss** | $-0.16 |
+| **Total Fees** | $0.87 |
+| **Bot Uptime** | 2h 1m |
 
 ---
 
@@ -39,12 +39,13 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 44x | $-0.84 |
-| **Profit Trail** | 22x | $4.98 |
-| **Loss Trail** | 13x | $-1.51 |
-| **Stop Loss** | 12x | $-3.73 |
+| **Time Limit** | 52x | $-1.38 |
+| **Profit Trail** | 23x | $5.21 |
+| **Stop Loss** | 18x | $-5.43 |
+| **Loss Trail** | 14x | $-1.67 |
 | **By Supervisor** | 1x | $-0.04 |
-| **Total** | 92x | $-1.14 |
+| **Emergency Close** | 1x | $-0.26 |
+| **Total** | 109x | $-3.57 |
 
 ## Restart History
 
