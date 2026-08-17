@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-16 21:01:22 UTC*
+*Updated: 2026-08-17 09:01:29 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $5.89 |
+| **Wallet Balance** | $5.67 |
 | **Initial Capital** | $6.02 |
-| **Realized P&L** | $-0.20 |
-| **Unrealized P&L** | $0.07 |
-| **Total P&L** | $-0.13 |
-| **Win Rate** | 38.9% |
-| **Closed Trades** | 18 |
-| **Wins / Losses** | 7W / 11L |
+| **Realized P&L** | $-0.32 |
+| **Unrealized P&L** | $-0.04 |
+| **Total P&L** | $-0.35 |
+| **Win Rate** | 40.7% |
+| **Closed Trades** | 27 |
+| **Wins / Losses** | 11W / 16L |
 | **Active Positions** | 1 |
-| **Avg Win** | $0.22 |
+| **Avg Win** | $0.19 |
 | **Avg Loss** | $-0.15 |
-| **Total Fees** | $0.14 |
-| **Bot Uptime** | 53m |
+| **Total Fees** | $0.22 |
+| **Bot Uptime** | 7h 15m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | BOMEUSDT | $0.37 | Profit Trail: 0.39% pullback |
-| **Worst** | LYNUSDT | $-0.34 | Stop Loss: -3.34% loss |
+| **Worst** | ONUSDT | $-0.36 | Stop Loss: -4.07% loss |
 
 ---
 
@@ -39,11 +39,11 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 6x | $-0.44 |
-| **Profit Trail** | 6x | $1.50 |
+| **Time Limit** | 11x | $-0.38 |
+| **Profit Trail** | 8x | $1.94 |
+| **Stop Loss** | 4x | $-1.36 |
 | **Loss Trail** | 4x | $-0.56 |
-| **Stop Loss** | 2x | $-0.64 |
-| **Total** | 18x | $-0.13 |
+| **Total** | 27x | $-0.35 |
 
 ## Restart History
 
