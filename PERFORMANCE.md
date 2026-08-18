@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-17 09:01:29 UTC*
+*Updated: 2026-08-18 09:02:38 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $5.67 |
-| **Initial Capital** | $6.02 |
-| **Realized P&L** | $-0.32 |
-| **Unrealized P&L** | $-0.04 |
-| **Total P&L** | $-0.35 |
-| **Win Rate** | 40.7% |
-| **Closed Trades** | 27 |
-| **Wins / Losses** | 11W / 16L |
-| **Active Positions** | 1 |
-| **Avg Win** | $0.19 |
+| **Wallet Balance** | $7.77 |
+| **Initial Capital** | $6.12 |
+| **Realized P&L** | $1.74 |
+| **Unrealized P&L** | $-0.08 |
+| **Total P&L** | $1.65 |
+| **Win Rate** | 64.7% |
+| **Closed Trades** | 17 |
+| **Wins / Losses** | 11W / 6L |
+| **Active Positions** | 5 |
+| **Avg Win** | $0.23 |
 | **Avg Loss** | $-0.15 |
-| **Total Fees** | $0.22 |
-| **Bot Uptime** | 7h 15m |
+| **Total Fees** | $0.14 |
+| **Bot Uptime** | 13h 45m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | BOMEUSDT | $0.37 | Profit Trail: 0.39% pullback |
-| **Worst** | ONUSDT | $-0.36 | Stop Loss: -4.07% loss |
+| **Best** | PORTALUSDT | $0.55 | Profit Trail: 0.13% pullback |
+| **Worst** | GWEIUSDT | $-0.32 | Stop Loss: -3.09% loss |
 
 ---
 
@@ -39,11 +39,11 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 11x | $-0.38 |
-| **Profit Trail** | 8x | $1.94 |
-| **Stop Loss** | 4x | $-1.36 |
-| **Loss Trail** | 4x | $-0.56 |
-| **Total** | 27x | $-0.35 |
+| **Profit Trail** | 7x | $2.03 |
+| **Time Limit** | 7x | $0.39 |
+| **Stop Loss** | 2x | $-0.62 |
+| **Loss Trail** | 1x | $-0.14 |
+| **Total** | 17x | $1.65 |
 
 ## Restart History
 
