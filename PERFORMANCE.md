@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-19 09:03:49 UTC*
+*Updated: 2026-08-19 21:03:56 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $6.44 |
-| **Initial Capital** | $6.12 |
-| **Realized P&L** | $0.39 |
-| **Unrealized P&L** | $-0.06 |
-| **Total P&L** | $0.33 |
-| **Win Rate** | 44.4% |
-| **Closed Trades** | 45 |
-| **Wins / Losses** | 20W / 25L |
-| **Active Positions** | 1 |
-| **Avg Win** | $0.19 |
-| **Avg Loss** | $-0.14 |
-| **Total Fees** | $0.36 |
-| **Bot Uptime** | 4h 9m |
+| **Wallet Balance** | $5.42 |
+| **Initial Capital** | $5.75 |
+| **Realized P&L** | $-0.80 |
+| **Unrealized P&L** | $0.47 |
+| **Total P&L** | $-0.33 |
+| **Win Rate** | 0.0% |
+| **Closed Trades** | 1 |
+| **Wins / Losses** | 0W / 1L |
+| **Active Positions** | 3 |
+| **Avg Win** | $0.00 |
+| **Avg Loss** | $-0.33 |
+| **Total Fees** | $0.01 |
+| **Bot Uptime** | 1h 38m |
 
 ---
 
@@ -30,8 +30,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | PORTALUSDT | $0.55 | Profit Trail: 0.13% pullback |
-| **Worst** | GWEIUSDT | $-0.32 | Stop Loss: -3.09% loss |
+| **Best** | PTBUSDT | $-0.33 | Stop Loss: -3.21% loss |
+| **Worst** | PTBUSDT | $-0.33 | Stop Loss: -3.21% loss |
 
 ---
 
@@ -39,12 +39,8 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 28x | $-0.64 |
-| **Profit Trail** | 10x | $2.71 |
-| **Stop Loss** | 5x | $-1.47 |
-| **Loss Trail** | 1x | $-0.14 |
-| **Emergency Close** | 1x | $-0.13 |
-| **Total** | 45x | $0.33 |
+| **Stop Loss** | 1x | $-0.33 |
+| **Total** | 1x | $-0.33 |
 
 ## Restart History
 
