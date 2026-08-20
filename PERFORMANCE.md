@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-20 09:04:05 UTC*
+*Updated: 2026-08-20 21:04:12 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $5.89 |
+| **Wallet Balance** | $3.21 |
 | **Initial Capital** | $5.75 |
-| **Realized P&L** | $0.54 |
-| **Unrealized P&L** | $-0.40 |
-| **Total P&L** | $0.14 |
-| **Win Rate** | 50.0% |
-| **Closed Trades** | 18 |
-| **Wins / Losses** | 9W / 9L |
-| **Active Positions** | 4 |
-| **Avg Win** | $0.21 |
-| **Avg Loss** | $-0.20 |
-| **Total Fees** | $0.14 |
-| **Bot Uptime** | 54m |
+| **Realized P&L** | $-2.62 |
+| **Unrealized P&L** | $0.08 |
+| **Total P&L** | $-2.54 |
+| **Win Rate** | 41.4% |
+| **Closed Trades** | 29 |
+| **Wins / Losses** | 12W / 17L |
+| **Active Positions** | 3 |
+| **Avg Win** | $0.19 |
+| **Avg Loss** | $-0.28 |
+| **Total Fees** | $0.23 |
+| **Bot Uptime** | 5h 57m |
 
 ---
 
@@ -31,7 +31,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
 | **Best** | GTCUSDT | $0.25 | Profit Trail: 0.24% pullback |
-| **Worst** | STORJUSDT | $-0.48 | Stop Loss: -2.90% loss |
+| **Worst** | ACEUSDT | $-2.20 | Stop Loss: -21.86% loss |
 
 ---
 
@@ -39,11 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 7x | $-0.31 |
-| **Profit Trail** | 7x | $1.69 |
-| **Stop Loss** | 3x | $-1.09 |
-| **Loss Trail** | 1x | $-0.15 |
-| **Total** | 18x | $0.14 |
+| **Time Limit** | 10x | $-0.32 |
+| **Profit Trail** | 8x | $1.89 |
+| **Loss Trail** | 6x | $-0.79 |
+| **Stop Loss** | 4x | $-3.29 |
+| **By Supervisor** | 1x | $-0.03 |
+| **Total** | 29x | $-2.54 |
 
 ## Restart History
 
