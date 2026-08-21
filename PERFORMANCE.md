@@ -1,6 +1,6 @@
 # Live Performance
 
-*Updated: 2026-08-20 21:04:12 UTC*
+*Updated: 2026-08-21 09:04:18 UTC*
 
 Real-time performance metrics from the live trading instance at **[rebirthtrader.com](https://rebirthtrader.com)**.
 
@@ -10,19 +10,19 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Metric | Value |
 |--------|-------|
-| **Wallet Balance** | $3.21 |
+| **Wallet Balance** | $4.02 |
 | **Initial Capital** | $5.75 |
-| **Realized P&L** | $-2.62 |
-| **Unrealized P&L** | $0.08 |
-| **Total P&L** | $-2.54 |
-| **Win Rate** | 41.4% |
-| **Closed Trades** | 29 |
-| **Wins / Losses** | 12W / 17L |
-| **Active Positions** | 3 |
-| **Avg Win** | $0.19 |
-| **Avg Loss** | $-0.28 |
-| **Total Fees** | $0.23 |
-| **Bot Uptime** | 5h 57m |
+| **Realized P&L** | $-1.63 |
+| **Unrealized P&L** | $-0.10 |
+| **Total P&L** | $-1.73 |
+| **Win Rate** | 47.7% |
+| **Closed Trades** | 44 |
+| **Wins / Losses** | 21W / 23L |
+| **Active Positions** | 1 |
+| **Avg Win** | $0.20 |
+| **Avg Loss** | $-0.26 |
+| **Total Fees** | $0.35 |
+| **Bot Uptime** | 49m |
 
 ---
 
@@ -30,7 +30,7 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | | Symbol | P&L | Exit Reason |
 |---|--------|-----|-------------|
-| **Best** | GTCUSDT | $0.25 | Profit Trail: 0.24% pullback |
+| **Best** | ONGUSDT | $0.51 | Profit Trail: 0.12% pullback |
 | **Worst** | ACEUSDT | $-2.20 | Stop Loss: -21.86% loss |
 
 ---
@@ -39,12 +39,12 @@ Real-time performance metrics from the live trading instance at **[rebirthtrader
 
 | Exit Reason | Count | Net P&L |
 |-------------|-------|---------|
-| **Time Limit** | 10x | $-0.32 |
-| **Profit Trail** | 8x | $1.89 |
-| **Loss Trail** | 6x | $-0.79 |
-| **Stop Loss** | 4x | $-3.29 |
+| **Time Limit** | 16x | $-0.31 |
+| **Profit Trail** | 14x | $3.53 |
+| **Loss Trail** | 7x | $-0.89 |
+| **Stop Loss** | 6x | $-4.03 |
 | **By Supervisor** | 1x | $-0.03 |
-| **Total** | 29x | $-2.54 |
+| **Total** | 44x | $-1.73 |
 
 ## Restart History
 
